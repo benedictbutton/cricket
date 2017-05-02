@@ -23,8 +23,12 @@ group :development, :test do
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
-  gem 'shoulda'
+  gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
+  gem 'dotenv-rails'
+  gem 'faker'
+  gem 'foundation-rails', "6.3.0.0"
+  gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 end
 
 group :development do
