@@ -3,7 +3,18 @@
     <h1>CRICKET</h1>
   </div>
   <div class="top-bar-right">
-    <button id="Sign Up"><%= link_to "Sign Up", new_user_registration_path, class: "button" %></li>
-    <button id="Log In"><%= link_to 'Log In', new_user_session_path, class: "button" %></button>
+    <% if current_user %>
+      <%= current_user.username %>
+      <button>
+        <%= link_to "Log Out", destroy_user_session_path, class: "button", method: "delete" %>
+      </button>
+    <% else %>
+      <button>
+        <%= link_to "Sign Up", new_user_registration_path, class: "button" %>
+      </button>
+      <button>
+        <%= link_to 'Log In', new_user_session_path, class: "button" %>
+      </button>
+    <% end %>
   </div>
 </div>
