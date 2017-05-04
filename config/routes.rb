@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :users
-  resources :two_players
-  resources :games
-  resources :teams
 
+
+
+  resources :games do
+    resources :games
+  end
 end

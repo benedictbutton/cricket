@@ -1,6 +1,6 @@
 class Player < ApplicationRecord
   validates :name, presence: true
 
-  def index
-  end
+  has_many :scores
+  has_many :games, through: :scores
 end
