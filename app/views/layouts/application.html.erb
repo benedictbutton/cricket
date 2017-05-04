@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div id="app">
   <% if notice %>
   <div class="success callout" data-closable><%= notice %>
     <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
@@ -20,8 +21,9 @@
     </button>
   </div>
   <% end %>
-
+    <div class="row column">
+  </div>
   <%= yield %>
-
+    </div>
 </body>
 </html>
