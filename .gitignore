@@ -20,6 +20,10 @@
 /node_modules
 /yarn-error.log
 
+/app/assets/javascripts/bundle.js
+/react/coverage
+
 /coverage
+
 
 .env
