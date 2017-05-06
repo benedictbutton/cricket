@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import GameTwoField from '../components/GameTwoField';
+import TwoPlayerField from '../components/TwoPlayerField';
 
-class GameTwoContainer extends Component {
+class TwoPlayerContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -11,10 +11,10 @@ class GameTwoContainer extends Component {
   render() {
     let test = "test"
     return(
-      <GameTwoField test = {test} />
+      <TwoPlayerField test = {test} />
 
     )
   }
 }
 
-export default GameTwoContainer;
+export default TwoPlayerContainer;

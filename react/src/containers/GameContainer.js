@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GameTile from '../components/GameTile';
 
-class GameShowContainer extends Component {
+class GameContainer extends Component {
   constructor(props) {
     super(props); {
     }
@@ -21,4 +21,4 @@ render() {
 }
 }
 
-export default GameShowContainer;
+export default GameContainer;

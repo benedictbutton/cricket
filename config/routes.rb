@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root to: 'home#index'
+root to: 'home#index'
+devise_for :users
+resources :users, only: [:index, :show]
+resources :games
+resources :two_players
 
-  resources :users
-
-
-
-  resources :games do
-    resources :games
+namespace :api do
+  namespace :v1 do
+    resources :users, only: [:show]
   end
+end
 end
