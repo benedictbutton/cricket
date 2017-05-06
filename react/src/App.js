@@ -1,16 +1,19 @@
 import React from 'react';
 import { Route, IndexRoute, Router, browserHistory } from 'react-router';
-import GameShowContainer from './containers/GameShowContainer';
-import GameTwoContainer from './containers/GameTwoContainer';
+import UserContainer from './containers/UserContainer'
+import UsersContainer from './containers/UsersContainer'
+import GameContainer from './containers/GameContainer';
+import TwoPlayerContainer from './containers/TwoPlayerContainer';
 
 const App = (props) => {
   return(
     <Router history={browserHistory}>
-      <Route path='/' >
-        <Route path="games/new" component={GameShowContainer} >
-          <Route path="games/new/two_player" component={GameTwoContainer} />
+      <Route>
+          <Route path="/users"    component={UsersContainer} />
+          <Route path="/users/:id" component={UserContainer} />
+          <Route path="games/new" component={GameContainer} />
+          <Route path="two_players/new" component={TwoPlayerContainer} />
         </Route>
-      </Route>
     </Router>
   );
 }
