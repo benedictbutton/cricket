@@ -13,6 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'webpacker'
+gem 'devise'
+gem 'httparty'
 
 group :test do
   gem 'coveralls', require: false
@@ -30,8 +32,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'faker'
   gem 'foundation-rails', "6.3.0.0"
-  gem 'devise', git: 'https://github.com/plataformatec/devise.git'
-  gem 'httparty'
 end
 
 group :development do
