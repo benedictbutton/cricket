@@ -15,7 +15,9 @@ end
   gem 'webpacker'
   gem 'devise', git: 'https://github.com/plataformatec/devise.git'
   gem 'httparty'
-
+  gem 'foundation-rails', "6.3.0.0"
+  gem 'fog'
+  gem 'fog-aws'
 
 group :test do
   gem 'coveralls', require: false
@@ -32,7 +34,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'dotenv-rails'
   gem 'faker'
-  gem 'foundation-rails', "6.3.0.0"
+
 end
 
 group :development do
