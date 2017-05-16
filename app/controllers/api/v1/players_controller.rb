@@ -23,6 +23,7 @@ def create
   else
     render json: { message: player.errors.full_messages }
   end
+end
 
 def player_params
   params.require(:player).permit(:name)
