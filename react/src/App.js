@@ -1,20 +1,37 @@
 import React from 'react';
-import { Route, IndexRoute, Router, browserHistory } from 'react-router';
-import UserContainer from './containers/UserContainer'
-import UsersContainer from './containers/UsersContainer'
-import GameContainer from './containers/GameContainer';
-import TwoPlayerContainer from './containers/TwoPlayerContainer';
+import { Route, IndexRoute, Router, browserHistory, withRouter } from 'react-router';
+import HomeContainer from './containers/HomeContainer';
+import UserIndexContainer from './containers/UserIndexContainer';
+import UserShowContainer from './containers/UserShowContainer';
+import GameIndexContainer from './containers/GameIndexContainer';
+import GameShowContainer from './containers/GameShowContainer';
+import ScoreCompiler from './containers/ScoreCompiler';
+import ScoreContainer from './containers/ScoreContainer';
+import GameFormContainer from './containers/GameFormContainer';
+import PlayerIndexContainer from './containers/PlayerIndexContainer';
+import PlayerShowContainer from './containers/PlayerShowContainer';
+import PlayerFormContainer from './containers/PlayerFormContainer';
 
 const App = (props) => {
   return(
     <Router history={browserHistory}>
-      <Route>
-          <Route path="/users"    component={UsersContainer} />
-          <Route path="/users/:id" component={UserContainer} />
-          <Route path="games/new" component={GameContainer} />
-          <Route path="two_players/new" component={TwoPlayerContainer} />
-        </Route>
-    </Router>
+      <Route path="users">
+        <IndexRoute component={UserIndexContainer}/>
+        <Route path=":id" component={UserShowContainer}/>
+      </Route>
+      <Route path="games">
+        <IndexRoute component={GameIndexContainer}/>
+        <Route path="new" component={GameFormContainer}/>
+        <Route path=":id" component={ScoreCompiler}/>
+      </Route>
+      <Route path="players">
+        <IndexRoute component={PlayerIndexContainer}/>
+        <Route path=":id" component={PlayerShowContainer}/>
+        <Route path="new" component={PlayerFormContainer}/>
+      </Route>
+  </Router>
+
+
   );
 }
 
