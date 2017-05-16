@@ -31,6 +31,7 @@ group :development, :test do
   gem 'faker'
   gem 'foundation-rails', "6.3.0.0"
   gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+  gem 'httparty'
 end
 
 group :development do

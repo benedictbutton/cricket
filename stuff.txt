@@ -1,0 +1,97 @@
+let userId = this.props.params.id;
+fetch(`/api/v1/users/${userId}`)
+.then(response => response.json())
+.then(responseData => {
+  debugger;
+  this.setState({ user: responseData });
+});
+
+let userId = this.props.params.id;
+  .then(response => {
+    let parsed = response.json()
+    return parsed
+  }).then (user => {
+    this.setState({ user: responseData });
+  })
+
+Object {id: 1, email: "testuser1@email.com", created_at: "2017-05-04T17:49:14.842Z", updated_at: "2017-05-05T19:05:54.962Z", first_name: "test"…}
+
+<section>
+  <h1>Profile</h1>
+  <ul>
+    <li>First Name {this.state.user.first_name}</li>
+    <li>Last Name {this.state.user.last_name}</li>
+    <li>Username {this.state.user.username}</li>
+  </ul>
+</section>
+
+import React, { Component } from 'react';
+
+class UsersContainer extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+        users: {}
+      }
+    }
+
+    componentDidMount() {
+        fetch('/api/v1/users')
+        .then(response => response.json())
+        .then(responseData => {
+          this.setState({ users: responseData });
+      });
+    }
+
+  render() {
+    let users = this.state.users.map(user => {
+      return(
+        <UserShow
+        id={user.id}
+        firstName={user.first_name}
+        lastName={user.last_name}
+        username={user.username}
+        email={user.email}
+        />
+      )
+  })
+}
+}
+
+let formPayload = {
+  playerTwo: this.state.playerTwo,
+  playerThree: this.state.playerThree,
+  playerFour: this.state.playerFour
+};
+this.props.addPlayer(formPayload);
+}
+
+getInitialState() { return { items: [] } }
+Read more at https://www.pluralsight.com/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails#M6Dj8SeWqgFKSRCg.99
+
+getInitialState() {
+    return {
+      employee: this.props.employee,
+      editMode: false,
+      errors: {}
+    }
+
+export default UsersContainer;
+
+handleHits(prevHits) {
+  debugger;
+  switch(prevHits) {
+    case 0:
+      this.setState({   marks: '/' });
+      break;
+    case 1:
+      this.setState({ marks: 'X' });
+      break;
+    case 2:
+      this.setState({ marks: '⊗' });
+      break;
+    case 3:
+      this.setState({ marks: '' });
+      break;
+  }
+  }
