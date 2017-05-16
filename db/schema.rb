@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20170504063508) do
   end
 
   create_table "scores", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "player_id"
-    t.bigint "game_id"
     t.integer "hits"
     t.integer "region"
+    t.bigint "player_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_scores_on_game_id"
     t.index ["player_id"], name: "index_scores_on_player_id"
   end
@@ -65,6 +65,4 @@ ActiveRecord::Schema.define(version: 20170504063508) do
   end
 
   add_foreign_key "players", "users"
-  add_foreign_key "scores", "games"
-  add_foreign_key "scores", "players"
 end
