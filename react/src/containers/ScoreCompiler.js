@@ -20,18 +20,15 @@ class ScoreCompiler extends Component {
     }
 
   updateHits(id) {
-    const updatedHitsAttribute = this.state.scores[id].
-    if( updatedHitsAttribute[id].hits < 3) {
-      updatedHitsAttribute[id].hits = this.state.scores[id].hits + 1;
+    const updatedHitsAttribute = [...this.state.scores];
+  if( updatedHitsAttribute[id].hits < 3) {
+    updatedHitsAttribute[id].hits = this.state.scores[id].hits + 1;
+  }
+  else{
+      updatedHitsAttribute[id].hits = this.state.scores[id].hits-3;
     }
-    else{
-        updatedHitsAttribute[id].hits = this.state.scores[id].hits-3;
+    this.setState({ scores: [...this.state.scores, ...updatedHitsAttribute] });
       }
-      this.setState({ scores: [...this.state.scores, ...updatedHitsAttribute] });
-        }
-
-
-
 
 
 render() {

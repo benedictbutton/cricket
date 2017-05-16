@@ -69,7 +69,7 @@ return(
       </div>
     </div>
 
-  <div className="containment">
+  <div className="containment" flex>
     <div className="row align-middle">
       <div className="medium-4 columns">
       {scoreOne}
