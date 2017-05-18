@@ -6,7 +6,8 @@ class PlayerShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerRecord: []
+      playerRecord: [],
+      gameRecord: []
   };
 
 }
@@ -19,13 +20,32 @@ class PlayerShowContainer extends Component {
       return parsed;
     })
     .then (responseData => {
-      this.setState({ playerRecord: responseData })
+      this.setState({ gameRecord:  responseData.games, playerRecord: responseData.player });
     });
   }
 
   render() {
-    return(
-    <PlayerShow />
+    let playerName;
+    let games = this.state.gameRecord.map(record => {
+      debugger;
+      let gameTitle = record.title;
+      let gameId =  record.id;
+      playerName = this.state.playerRecord.name;
+      return(
+      <PlayerShow
+      gameTitle={gameTitle}
+      gameId={gameId}
+      />
+    )
+    });
+
+  return(
+    <div>
+      <h1 className="player-name">{playerName}</h1>
+        <ul>
+        {games}
+        </ul>
+      </div>
     );
   }
 }

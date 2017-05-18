@@ -34,8 +34,8 @@ class PlayerIndexContainer extends Component {
     });
     return(
       <div className="row">
-      <div className="small-8 small-centered columns">
-        <h1>Players</h1>
+      <div className="small-8 small columns">
+        <h1 className="players">Players</h1>
           {players}
       </div>
       </div>

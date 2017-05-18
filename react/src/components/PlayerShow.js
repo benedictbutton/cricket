@@ -1,15 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const PlayerShow = (props) => {
-
   return(
-    <section>
-      <h1>Player Record</h1>
-      <ul>
-        <li>Player {props.playerName}</li>
-      </ul>
-    </section>
-  )
+      <Link to={`/games/${props.gameId}`} className="game">
+      <li className="player-games">{props.gameTitle}</li></Link>
+    )
 }
 
 export default PlayerShow;
