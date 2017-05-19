@@ -30,7 +30,6 @@ class ScoreCompiler extends Component {
     this.setState({ scores: [...this.state.scores, ...updatedHitsAttribute] });
       }
 
-
 render() {
   return(
     <div id="app">

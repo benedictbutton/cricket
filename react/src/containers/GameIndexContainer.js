@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GameIndex from '../components/GameIndex';
 import GameFormContainer from './GameFormContainer';
-import GameField from '../components/GameField';
 import ScoreContainer from './ScoreContainer';
 
 class GameIndexContainer extends Component {
@@ -38,10 +37,9 @@ render() {
 
     return(
       <div className="row">
-      <div className="small-8 small-centered columns">
-        <h1>Games</h1>
+      <div className="small-8 small columns">
+        <h1 className="games">Games</h1>
           {games}
-          {this.props.children}
       </div>
       </div>
     )

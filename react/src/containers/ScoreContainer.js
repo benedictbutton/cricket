@@ -17,8 +17,6 @@ class ScoreContainer extends Component {
     this.props.updateHits(id);
   }
 
-
-
 render() {
 
 let playerOne;
