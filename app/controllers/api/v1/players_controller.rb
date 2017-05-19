@@ -8,8 +8,11 @@ def index
 end
 
 def show
-  player = player.find(params[:id])
-  render json: player
+  playerData = {}
+  player = Player.find(params[:id])
+  playerData[:player] = player
+  playerData[:games] = player.games.uniq
+  render json: playerData
 end
 
 def new

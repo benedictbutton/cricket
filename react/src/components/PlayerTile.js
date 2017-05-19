@@ -3,9 +3,10 @@ import { Link } from 'react-router';
 
 const PlayerTile = (props) => {
   return(
-    <div className="player-tile">
-      <Link to={`/players/${player.id}`}>
-        {props.playerName}
+    <div>
+      <Link to={`/players/${props.id}`}>
+        <p className="player">{props.playerName}</p>
+        <hr/>
       </Link>
     </div>
   )
