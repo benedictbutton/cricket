@@ -27,7 +27,6 @@ class PlayerShowContainer extends Component {
   render() {
     let playerName;
     let games = this.state.gameRecord.map(record => {
-      debugger;
       let gameTitle = record.title;
       let gameId =  record.id;
       playerName = this.state.playerRecord.name;

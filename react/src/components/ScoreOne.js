@@ -5,10 +5,12 @@ class GameOne extends Component {
     super(props);
     }
 
+
 render() {
   return(
-        <h1 className="hits" onClick={() => {this.props.handleChange(this.props.id) }}>
+        <h1 className="hits" onClick={this.props.handleChange}>
         {(() => {
+          debugger;
           switch(this.props.hits) {
             case 1: return '/';
             case 2: return 'X';
