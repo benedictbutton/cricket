@@ -5,18 +5,9 @@ class ScoreTwo extends Component {
     super(props);
     }
 
-    // handleChange() {
-    //   if(this.props.hits < 3) {
-    //     return this.props.hits + 1;
-    //   }
-    //   else {
-    //     return this.props.hits - 3
-    //   }
-    // }
-
 render() {
   return(
-<h1 className="hits" onClick={this.props.handleChange}>
+<h1 className="hits" onClick={() => {this.props.handleChange(this.props.id) }}>
 {(() => {
   switch(this.props.hits) {
     case 1: return '/';

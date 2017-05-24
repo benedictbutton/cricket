@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 
-class GameOne extends Component {
+class ScoreOne extends Component {
   constructor(props) {
     super(props);
     }
 
-
 render() {
   return(
-        <h1 className="hits" onClick={this.props.handleChange}>
+        <h1 className="hits" onClick={() => {this.props.handleChange(this.props.id) }}>
         {(() => {
-          debugger;
           switch(this.props.hits) {
             case 1: return '/';
             case 2: return 'X';
@@ -23,4 +21,4 @@ render() {
 }
 }
 
-export default GameOne;
+export default ScoreOne;
