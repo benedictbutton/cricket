@@ -13,8 +13,8 @@ class ScoreContainer extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(id) {
-    this.props.updateHits(id);
+  handleChange(id, hits) {
+    this.props.updateHits(id, hits);
   }
 
 render() {

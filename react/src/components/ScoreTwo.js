@@ -7,7 +7,7 @@ class ScoreTwo extends Component {
 
 render() {
   return(
-<h1 className="hits" onClick={() => {this.props.handleChange(this.props.id) }}>
+<h1 className="hits" onClick={() => {this.props.handleChange(this.props.id, this.props.hits) }}>
 {(() => {
   switch(this.props.hits) {
     case 1: return '/';

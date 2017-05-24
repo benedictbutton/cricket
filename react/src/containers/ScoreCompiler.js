@@ -19,16 +19,26 @@ class ScoreCompiler extends Component {
       });
     }
 
-  updateHits(id) {
-    const updatedHitsAttribute = [...this.state.scores];
-  if( updatedHitsAttribute[id].hits < 3) {
-    updatedHitsAttribute[id].hits = this.state.scores[id].hits + 1;
-  }
-  else{
-      updatedHitsAttribute[id].hits = this.state.scores[id].hits-3;
-    }
-    this.setState({ scores: [...this.state.scores, ...updatedHitsAttribute] });
+    updateHits(id, hits) {
+      if(hits < 3) {
+        this.state.scores[id].hits += 1;
       }
+      else {
+        this.state.scores[id].hits -= 3;
+      }
+      this.setState(this.state);
+    }
+
+  // updateHits(id) {
+  //   const updatedHitsAttribute = [...this.state.scores];
+  // if( updatedHitsAttribute[id].hits < 3) {
+  //   updatedHitsAttribute[id].hits = this.state.scores[id].hits + 1;
+  // }
+  // else{
+  //     updatedHitsAttribute[id].hits = this.state.scores[id].hits-3;
+  //   }
+  //   this.setState({ scores: [...this.state.scores, ...updatedHitsAttribute] });
+  //     }
 
 render() {
   return(
