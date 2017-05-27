@@ -30,6 +30,12 @@ Header
   display: inline-block;
   font-size: 6rem;
   color: red;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  // background-image: url("dart20.png");
+  // background-size: auto;
+  // background-repeat: no-repeat;
+  // background-position: bottom 50%;
 }
 
 .title-bar-right {
@@ -39,6 +45,15 @@ Header
   font-weight: bold;
   text-align: left;
 }
+
+.float-center {
+  width: 40%;
+  height: 40%;
+  margin: 0;
+  display: inline-block;
+  align-self: center;
+
+  }
 
 /******************************
 Profile
@@ -93,11 +108,12 @@ label {
 /******************************
 Scoreboard
 ******************************/
-.container {
-   display: flex;
-   flex-flow: row;
-   justify-content: center;
-}
+// .container {
+//    display: flex;
+//    flex-flow: row;
+//    justify-content: center;
+//    border-color: white;
+// }
 
 .player-scoreboard {
   text-align: center;
@@ -113,6 +129,8 @@ Scoreboard
   min-height: 70px;
   font-weight: bold;
   margin: 0;
+  border-color: white;
+  border-style: solid;
 }
 
 .even {
