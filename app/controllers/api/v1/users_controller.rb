@@ -19,6 +19,12 @@ class Api::V1::UsersController < ApplicationController
     render json: { user: @user, current_user: @current_user }
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :email)
+  end
+
   end
 
 
