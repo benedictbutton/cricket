@@ -1,7 +1,7 @@
 @import "settings";
 
 body {
-  background: url('chalk-background.jpg') no-repeat center center fixed;
+  background-image: url(<%= assest-path 'chalk-background.jpg' %>) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -32,10 +32,6 @@ Header
   color: red;
   margin-bottom: 0;
   padding-bottom: 0;
-  // background-image: url("dart20.png");
-  // background-size: auto;
-  // background-repeat: no-repeat;
-  // background-position: bottom 50%;
 }
 
 .title-bar-right {
