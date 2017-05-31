@@ -27,7 +27,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
 
-  config.secret_key = '-- secret key --'
+  # config.secret_key = '-- secret key --'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -38,7 +38,7 @@ Devise.setup do |config|
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [:email]
-  config.authentication_keys = [:login]
+  # config.authentication_keys = [:login]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
