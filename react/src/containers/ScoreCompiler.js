@@ -47,6 +47,10 @@ render() {
       scores={this.state.scores}
       updateHits={this.updateHits}
        />
+
+       <ScoreSaveContainer
+       scores={this.state.scores}
+       />
     </div>
   )
 }
