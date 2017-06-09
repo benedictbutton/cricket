@@ -19,8 +19,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :username, "Username" %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <%= f.fields_for :player, Player.new do |name| %>
+    <%= name.label :name, "Player Name" %><br />
+    <%= name.text_field :name, autofocus: true %>
+    <% end %>
   </div>
 
   <div class="field">

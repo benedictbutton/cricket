@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :username, presence: true
 
   has_one :player
+  accepts_nested_attributes_for :player
 end

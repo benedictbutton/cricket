@@ -16,10 +16,10 @@ def show
 end
 
 def new
-  @player = Player.new
 end
 
 def create
+  binding.pry
   player = Player.new(name: player_name)
   if player.save
     render json: { message: "Players setup" }
