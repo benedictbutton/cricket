@@ -29,18 +29,21 @@ class Api::V1::GamesController < ApplicationController
     parsed.each do |player|
       player = Player.create(name: player[1])
       points_area = 20
-      while points_area > 14
+      while points_area > 13
           score = Score.create(player_id: player.id, game_id: game.id, hits: 0, region: points_area)
           scores << score
           points_area = points_area - 1
         end
-        score = Score.create(player_id: player.id, game_id: game.id, hits: 0, region: 25)
+        # score = Score.create(player_id: player.id, game_id: game.id, hits: 0, region: 25)
         scores << score
       end
       render json: { message: "Players setup", game: game.id }
       else
         render json: { message: game.errors.full_messages }
-      end
+    end
+  end
+
+  def update
   end
 
   private

@@ -8,6 +8,7 @@ class ScoreCompiler extends Component {
     scores: []
   };
   this.updateHits = this.updateHits.bind(this);
+  this.handleSave = this.handleSave.bind(this);
 }
 
   componentDidMount() {
@@ -15,7 +16,7 @@ class ScoreCompiler extends Component {
       fetch(`/api/v1/scores/${gameId}`, { credentials: 'same-origin' })
       .then(response => response.json())
       .then(responseData => {
-        this.setState({ scores: [...this.state.scores, ...responseData.game] });
+        this.setState({ scores: responseData.game });
       });
     }
 
@@ -29,16 +30,30 @@ class ScoreCompiler extends Component {
       this.setState(this.state);
     }
 
-  // updateHits(id) {
-  //   const updatedHitsAttribute = [...this.state.scores];
-  // if( updatedHitsAttribute[id].hits < 3) {
+  handleSave (event) {
+    event.preventDefault();
+    const updatedHitsAttribute = [...this.state.scores];
+
+  // if(updatedHitsAttribute[id].hits < 3) {
   //   updatedHitsAttribute[id].hits = this.state.scores[id].hits + 1;
   // }
   // else{
   //     updatedHitsAttribute[id].hits = this.state.scores[id].hits-3;
   //   }
-  //   this.setState({ scores: [...this.state.scores, ...updatedHitsAttribute] });
-  //     }
+
+  fetch(`/api/v1/scores/${this.props.params.id}`, {
+    credentials: 'same-origin',
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updatedHitsAttribute)
+  })
+  .then(response => response.json())
+  .then(responseData => {
+    debugger;
+    this.setState({ scores: responseData.scores });
+    debugger;
+  });
+}
 
 render() {
   return(
@@ -46,6 +61,7 @@ render() {
       <ScoreContainer
       scores={this.state.scores}
       updateHits={this.updateHits}
+      handleSave={this.handleSave}
        />
     </div>
   )
