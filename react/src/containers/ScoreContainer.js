@@ -3,6 +3,7 @@ import ScoreCompiler from './ScoreCompiler';
 import ScoreOne from '../components/ScoreOne';
 import ScoreTwo from '../components/ScoreTwo';
 import ScoreRegions from '../components/ScoreRegions';
+import ScoreField from '../components/ScoreField';
 
 
 class ScoreContainer extends Component {
@@ -11,26 +12,35 @@ class ScoreContainer extends Component {
     this.state = {
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
   handleChange(id, hits) {
     this.props.updateHits(id, hits);
   }
 
-render() {
+  handleSort(a, b) {
+    return a.id - b.id
+  }
 
+render() {
 let playerOne;
 let playerTwo;
 
+this.props.scores.sort(this.handleSort);
+
   let scoreOne = this.props.scores.slice(0, 7);
   let scoreTwo = this.props.scores.slice(7,14);
+  let scoreOneIndex = 20
+  let scoreTwoIndex = 27
 
      scoreOne = scoreOne.map(score => {
        playerOne = score.player_name;
+       let indexOne = scoreOneIndex - score.region
            return(
              <ScoreOne
                  key={score.id}
-                 id={score.record}
+                 id={indexOne}
                  player={score.player_id}
                  region={score.region}
                  hits={score.hits}
@@ -41,10 +51,11 @@ let playerTwo;
 
            scoreTwo = scoreTwo.map(score => {
              playerTwo = score.player_name
+             let indexTwo = scoreTwoIndex - score.region;
              return(
              <ScoreTwo
                key={score.id}
-               id={score.record}
+               id={indexTwo}
                player={score.player_id}
                region={score.region}
                hits={score.hits}
@@ -59,7 +70,10 @@ return(
       <div className="medium-4 columns">
         <h2 className="player-scoreboard">{playerOne}</h2>
       </div>
-
+      <form>
+        <ScoreField
+        score={this.props.scores} handleSave={this.props.handleSave}/>
+      </form>
       <div className="small-3 columns"></div>
 
       <div className="medium-4 columns">

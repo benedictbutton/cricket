@@ -33,10 +33,21 @@ class Api::V1::ScoresController < ApplicationController
       end
     end
 
+  def update
+    @scores = []
+    scores = params['_json']
+    scores.each do |score|
+     Score.find(score[:id]).update!(hits: score[:hits])
+     score[:player_name] = Player.find(score[:player_id]).name
+      @scores << score
+      # Score.find(score[:id])
+    end
+    render json: {scores: @scores}.to_json
+  end
 
   private
 
   def score_params
-    params.require(:score).permit(:player_id, :game_id, :hits, :region)
+    params.require(:score).permit(:id, :player_id, :game_id, :hits, :region)
   end
 end

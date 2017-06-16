@@ -16,7 +16,6 @@ def show
 end
 
 def new
-  @player = Player.new
 end
 
 def create

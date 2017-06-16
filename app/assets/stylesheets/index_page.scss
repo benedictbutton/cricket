@@ -12,7 +12,11 @@ Header
 .top-bar {
   background-color: black;
   text-align: center;
-}
+  background-image: url(dart-and-board.jpeg);
+  background-repeat: no-repeat;
+  background-size: 95% contain;
+  background-position: right;
+  }
 
 .top-bar-right {
   justify-content: space-between;
@@ -28,9 +32,9 @@ Header
 .header-text {
   font-family: 'Times New Roman', serif;
   display: inline-block;
-  font-size: 6rem;
+  font-size: 4rem;
   color: red;
-  margin-bottom: 0;
+  margin-bottom: 3rem;
   padding-bottom: 0;
 }
 
