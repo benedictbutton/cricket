@@ -66,15 +66,17 @@ this.props.scores.sort(this.handleSort);
 
 return(
 <div>
-    <div className="row">
+    <div className="row align-center">
       <div className="medium-4 columns">
         <h2 className="player-scoreboard">{playerOne}</h2>
       </div>
-      <form>
-        <ScoreField
-        score={this.props.scores} handleSave={this.props.handleSave}/>
-      </form>
-      <div className="small-3 columns"></div>
+
+      <div className="small-3 columns">
+        <form>
+          <ScoreField
+          score={this.props.scores} handleSave={this.props.handleSave}/>
+        </form>
+      </div>
 
       <div className="medium-4 columns">
         <h2 className="player-scoreboard">{playerTwo}</h2>
@@ -82,7 +84,7 @@ return(
     </div>
 
   <div className="containment" flex>
-    <div className="row align-middle">
+    <div className="row align-center">
       <div className="medium-4 columns">
       {scoreOne}
       </div>

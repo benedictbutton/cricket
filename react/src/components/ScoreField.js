@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const ScoreField = (props) => {
   return(
-    <button className="button" onClick={props.handleSave}>Save</button>
+    <button className="button large align-middle" onClick={props.handleSave}>Save</button>
 
   )
 
