@@ -14,7 +14,9 @@ Header
   text-align: center;
   background-image: url(dart-and-board.jpeg);
   background-repeat: no-repeat;
-  background-size: 95% contain;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 95% 100%;
+  background-size: 100% 100%;
   background-position: right;
   }
 
@@ -32,7 +34,8 @@ Header
 .header-text {
   font-family: 'Times New Roman', serif;
   display: inline-block;
-  font-size: 4rem;
+  font-size: 5rem;
+  font-weight: bold;
   color: red;
   margin-bottom: 3rem;
   padding-bottom: 0;
@@ -43,7 +46,6 @@ Header
   margin-right: 5px;
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: left;
 }
 
 .float-center {
@@ -139,6 +141,7 @@ Scoreboard
   background-color: black;
   color: white;
   margin: 0;
+  min-height: 70px;
 }
 
 .odd {
@@ -147,6 +150,7 @@ Scoreboard
   background-color: red;
   color: white;
   margin: 0;
+  min-height: 70px
 }
 
 /******************************
