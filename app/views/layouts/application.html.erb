@@ -23,7 +23,6 @@
   </div>
   <% end %>
 
-
   <div class="top-bar">
     <div class="top-bar-left">
          <h1 class="header-text">CRICKET</h1>
@@ -31,7 +30,7 @@
           <!-- <%= image_tag("dart20.png", class: "float-center") %> -->
           <!-- <%= image_tag("dart-and-board", class: "board") %> -->
     <div class="top-bar-right">
-      <% if current_user %>
+      <% if user_signed_in? %>
         <button class="header-button">
           <%= link_to "Log Out", destroy_user_session_path, class: "button", method: "delete" %>
         </button>
