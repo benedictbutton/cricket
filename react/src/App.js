@@ -15,7 +15,7 @@ import PlayerFormContainer from './containers/PlayerFormContainer';
 const App = (props) => {
   return(
     <Router history={browserHistory}>
-    <Route path='/' component={ScoreCompiler}/>
+    <Route path='/'  component={HomeContainer}/>
       <Route path="users">
         <IndexRoute component={UserIndexContainer}/>
         <Route path=":id" component={UserShowContainer}/>
