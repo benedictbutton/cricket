@@ -10,6 +10,7 @@ Header
 ******************************/
 
 .top-bar {
+  min-height: 250px;
   background-color: black;
   text-align: center;
   background-image: url(faded-darts.jpeg);
@@ -41,7 +42,12 @@ Header
   padding-bottom: 0;
 }
 
-.title-bar-right {
+.menu-vertical {
+  background-color: black;
+  list-style: none;
+}
+
+.username a {
   color: red;
   margin-right: 5px;
   font-size: 1.5rem;
@@ -56,6 +62,16 @@ Header
   align-self: center;
 
   }
+
+/******************************
+Home Page
+******************************/
+
+.sign-up {
+  font-family: 'Chalkboard', serif;
+  color: white;
+  text-decoration: underline;
+}
 
 /******************************
 Profile
@@ -86,13 +102,20 @@ Profile
   Forms
   ******************************/
 
+  .account-signup {
+    font-family: 'Chalkboard', serif;
+    color: white;
+    text-decoration: underline;
+  }
+
   .button {
     background-color: green;
   }
 
 .login {
+  font-family: 'Chalkboard', serif;
   color: white;
-  font-size: 4rem;
+  text-decoration: underline;
   margin: 25px;
 }
 

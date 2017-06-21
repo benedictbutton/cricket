@@ -5,14 +5,11 @@ class HomeContainer extends Component {
     super(props);
   }
 
-
-
 render() {
   return(
-    <div id="home">
+  <div id="app">
 
-
-    </div>
+  </div>
   )
 }
 }
