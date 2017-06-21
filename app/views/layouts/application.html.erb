@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
   <% if notice %>
   <div class="success callout" data-closable><%= notice %>
     <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
@@ -44,9 +43,10 @@
           <a href="#"><%= current_user.player.name %></a>
           <ul class="menu-vertical">
             <li><a href="#"><%= link_to "Log Out", destroy_user_session_path, method: "delete" %></a></li>
+          </div>
+        </div>
       <% end %>
-    </div>
-  </div>
+
 
 <div id="app"></div>
     <%= yield %>
