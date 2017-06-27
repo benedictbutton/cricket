@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import ScoreContainer from './ScoreContainer';
+import SaveAlert from '../components/SaveAlert';
 
 class ScoreCompiler extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    scores: []
+    scores: [],
+    message: null
   };
   this.updateHits = this.updateHits.bind(this);
   this.handleSave = this.handleSave.bind(this);
+  this.confirmSave = this.confirmSave.bind(this);
 }
 
   componentDidMount() {
@@ -49,23 +52,31 @@ class ScoreCompiler extends Component {
   })
   .then(response => response.json())
   .then(responseData => {
-    debugger;
-    this.setState({ scores: responseData.scores });
-    debugger;
+    this.setState({ scores: responseData.scores,
+    message: responseData.message });
   });
+}
+
+confirmSave() {
+  this.setState({ message: null });
 }
 
 render() {
   return(
-    <div id="app">
+    <div>
+      {this.state.message && <SaveAlert message={this.state.message} confirmSave={this.confirmSave} />
+     }
+    <div>
       <ScoreContainer
       scores={this.state.scores}
       updateHits={this.updateHits}
       handleSave={this.handleSave}
        />
     </div>
+    </div>
   )
 }
 }
+
 
 export default ScoreCompiler;
