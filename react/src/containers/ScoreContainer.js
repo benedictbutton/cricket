@@ -5,7 +5,6 @@ import ScoreTwo from '../components/ScoreTwo';
 import ScoreRegions from '../components/ScoreRegions';
 import ScoreField from '../components/ScoreField';
 
-
 class ScoreContainer extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +19,7 @@ class ScoreContainer extends Component {
   }
 
   handleSort(a, b) {
-    return a.id - b.id
+    return a.id - b.id;
   }
 
 render() {
@@ -31,8 +30,8 @@ this.props.scores.sort(this.handleSort);
 
   let scoreOne = this.props.scores.slice(0, 7);
   let scoreTwo = this.props.scores.slice(7,14);
-  let scoreOneIndex = 20
-  let scoreTwoIndex = 27
+  let scoreOneIndex = 20;
+  let scoreTwoIndex = 27;
 
      scoreOne = scoreOne.map(score => {
        playerOne = score.player_name;
@@ -74,7 +73,8 @@ return(
       <div className="small-3 columns">
         <form>
           <ScoreField
-          score={this.props.scores} handleSave={this.props.handleSave}/>
+          score={this.props.scores}
+          message={this.props.message} handleSave={this.props.handleSave}/>
         </form>
       </div>
 

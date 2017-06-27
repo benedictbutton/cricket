@@ -42,7 +42,12 @@ class Api::V1::ScoresController < ApplicationController
       @scores << score
       # Score.find(score[:id])
     end
-    render json: {scores: @scores}.to_json
+    if @scores.length == 14
+      flash[:notice] = "Game saved successfully"
+    else
+      flash[:alert] = "Apologies. There was an issue saving the game. Please try again."
+    end
+    render json: {scores: @scores, message: "Game saved successfully"}.to_json
   end
 
   private
