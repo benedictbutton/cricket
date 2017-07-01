@@ -3,7 +3,7 @@ class Api::V1::PlayersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
 def index
-  players = Player.all
+  players = Game.find_by(user_id: current_user.id).players.select(:name).distinct
   render json: players
 end
 

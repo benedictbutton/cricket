@@ -30,8 +30,10 @@ class GameFormContainer extends Component {
   }
 
   addNewGame(formPayload) {
-    fetch('/api/v1/games', {
+    fetch('/api/v1/games.json', {
+      credentials: 'same-origin',
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formPayload)
     })
     .then(response => {
