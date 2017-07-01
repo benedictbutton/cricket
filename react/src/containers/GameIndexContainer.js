@@ -12,7 +12,10 @@ class GameIndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/games')
+    fetch('/api/v1/games', {
+        credentials: 'same-origin',
+        method: 'GET',
+      })
     .then(response => {
       let parsed = response.json();
       return parsed })

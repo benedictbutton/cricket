@@ -1,9 +1,9 @@
 class Api::V1::GamesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, only: [:create]
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    games = Game.all
+    games = Game.where(user_id: current_user.id)
     render json: games
   end
 
@@ -24,7 +24,7 @@ class Api::V1::GamesController < ApplicationController
     body = request.body.read
     parsed = JSON.parse(body)
     scores = []
-    game = Game.new(title: game_title)
+    game = Game.new(title: game_title, user_id: current_user.id)
     if game.save
     parsed.each do |player|
       player = Player.create(name: player[1])
