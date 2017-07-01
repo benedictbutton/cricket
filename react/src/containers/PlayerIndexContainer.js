@@ -11,7 +11,10 @@ class PlayerIndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/players')
+    fetch('/api/v1/players', {
+        credentials: 'same-origin',
+        method: 'GET',
+      })
     .then(response => {
       let parsed = response.json();
       return parsed })

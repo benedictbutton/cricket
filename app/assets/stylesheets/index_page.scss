@@ -29,7 +29,7 @@ Header
 .title-bar {
   background-color: #282828;
   margin-bottom: .5%;
-  font-size: 1.33rem;
+  font-size: 1.5rem;
 }
 
 .header-text {
@@ -54,7 +54,7 @@ a:hover {
 .username a {
   color: red;
   margin-right: 5px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -88,18 +88,19 @@ Profile
 .profile-username {
   color: white;
   font-weight: bold;
-
 }
 
 .profile h2 {
       font-size: 2rem;
       color: white;
       text-align: left;
+      text-decoration: underline;
       }
 
   .profile ul {
-    font-size: 1.25rem;
-    color: white
+    font-size: 1.70rem;
+    color: white;
+    font-family: 'Chalkboard', serif;
   }
 
   /******************************
