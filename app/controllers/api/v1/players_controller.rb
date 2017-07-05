@@ -3,7 +3,13 @@ class Api::V1::PlayersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
 def index
-  players = Game.find_by(user_id: current_user.id).players.select(:name).distinct
+  players = []
+  games = Game.where(user_id: current_user.id)
+  games.each do |game|
+    game.players.select(:name, :id).distinct.each do |player|
+      players << player
+    end
+  end
   render json: players
 end
 
@@ -25,6 +31,10 @@ def create
   else
     render json: { message: player.errors.full_messages }
   end
+end
+
+def edit
+  binding.pry
 end
 
 def player_params

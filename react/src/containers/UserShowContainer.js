@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import UserShow from '../components/UserShow';
 
 class UserShowContainer extends Component {
@@ -6,8 +7,10 @@ class UserShowContainer extends Component {
     super(props);
       this.state = {
         user: [],
-        current_user: []
+        current_user: [],
+        player: []
       };
+      // this.handleLink = this.handleLink.bind(this);
   }
 
   componentDidMount() {
@@ -18,30 +21,34 @@ class UserShowContainer extends Component {
       return parsed;
     })
     .then (responseData => {
-      this.setState({ user: responseData, current_user: responseData.current_user });
+      this.setState({ user: responseData, current_user: responseData.current_user, player: responseData.player });
     });
   }
 
+  // handleLink(event) {
+  //   event.preventDefault();
+  //   let path = '/auth/register/edit';
+  //   browserHistory.push(path);
+  // }
+
 render() {
-  let username = this.state.current_user.username;
+  let player = this.state.player.name;
   let firstName = this.state.current_user.first_name;
   let lastName = this.state.current_user.last_name;
   let email = this.state.current_user.email;
 
-
-
   return(
     <div>
       <UserShow
-        username={username}
+        player={player}
         firstName={firstName}
         lastName={lastName}
         email={email}
+        handleLink={this.handleLink}
         />
     </div>
   )
 }
 }
-
 
 export default UserShowContainer;
