@@ -28,11 +28,15 @@ render() {
   let games = this.state.games.map(game => {
     let id = game.id;
     let title = game.title;
+    let dateString = Date.parse(game.created_at)
+    let d = new Date(dateString);
+    let date = d.toDateString();
     return(
       <GameIndex
       key={id}
       id={id}
       title={title}
+      date={date}
       />
 
       )
@@ -42,7 +46,7 @@ render() {
       <div className="row">
       <div className="small-8 small columns">
         <h1 className="games">Games</h1>
-          {games}
+            <div className="game">{games}</div>
       </div>
       </div>
     )

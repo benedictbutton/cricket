@@ -3,10 +3,20 @@ import { Link } from 'react-router';
 
 const GameIndex = props => {
   return(
-    <div>
-        <Link to={`/games/${props.id}`} className="game">{props.title}</Link>
-        <hr/>
+    <div className="row">
+      <div className="small-6 columns">
+      <Link to={`/games/${props.id}`} className="game">{props.title}</Link>
+      </div>
+      <div className="small-6 columns">{props.date}
+      </div>
+    <hr />
     </div>
+
+
+
+
+
+
   )
 }
 

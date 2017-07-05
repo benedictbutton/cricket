@@ -16,11 +16,7 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    if Game.last.nil?
-      game_title = "Game #{1}"
-    else
-      game_title = "Game #{Game.last.id + 1}"
-    end
+    game_title = "#{params[:playerOne]} vs. #{params[:playerTwo]}"
     body = request.body.read
     parsed = JSON.parse(body)
     scores = []
