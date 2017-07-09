@@ -2,18 +2,27 @@ import React from 'react';
 
 const UserShow = (props) => {
   return(
-<div className="small-12 large-6 columns">
-    <div className="row">
     <div>
-    <section className="profile">
-        <h2>First Name</h2><ul>{props.firstName}</ul>
-        <h2>Last Name</h2><ul>{props.lastName}</ul>
-        <h2>Email</h2><ul>{props.email}</ul>
-        <h2>Player Name</h2><ul>{props.player}</ul>
-    </section>
+    <div className="media-object">
+    <div className="media-object-section">
+    <div className="thumbnail">
+    <img src="/assets/board.jpg" width="300px" />
     </div>
-    </div>
-      <a className="button" href="/auth/register/edit">Edit</a>
+  </div>
+  <div className="media-object-section main-section">
+  <div className="row small-up-1 medium-up-2 large-up-2 collapse">
+  <div className="small-2 columns"><h1 className="even">First Name</h1></div>
+  <div className="small-2 columns"><h1 className="hits">{props.firstName}</h1></div>
+  <div className="small-2 columns"><h1 className="odd">Last Name</h1></div>
+  <div className="small-2 columns"><h1 className="hits">{props.lastName}</h1></div>
+  <div className="small-2 columns"><h1 className="even">Email</h1></div>
+  <div className="small-2 columns"><h1 className="hits">{props.email}</h1></div>
+  <div className="small-2 columns"><h1 className="odd">Player Name</h1></div>
+  <div className="small-2 columns"><h1 className="hits">{props.player}</h1></div>
+  </div>
+  </div>
+</div>
+    <a className="button" href="/auth/register/edit">Edit</a>
     </div>
   )
 }
