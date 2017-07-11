@@ -8,6 +8,7 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def show
+    binding.pry
     @game = Game.find(params[:id])
   end
 
