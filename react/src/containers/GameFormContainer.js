@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import TwoPlayerField from '../components/TwoPlayerField';
 import TeamsField from '../components/TeamsField';
+import TeamLabel from '../components/TeamLabel';
 
 class GameFormContainer extends Component {
   constructor(props) {
@@ -58,7 +59,8 @@ handleGameType(event) {
       playerOne: this.state.playerOne,
       playerTwo: this.state.playerTwo,
       playerThree: this.state.playerThree,
-      playerFour: this.state.playerFour
+      playerFour: this.state.playerFour,
+      gameType: this.state.gameType
     };
     this.addNewGame(formPayload);
   }
@@ -73,18 +75,47 @@ handleGameType(event) {
         </select>
       </label>
 
+    <div className="row">
+      <TeamLabel gameType={this.state.gameType} team='One'/>
+    </div>
+
+    <div className="row">
       <TwoPlayerField
-      playerOne={this.state.playerOne}
-      playerTwo={this.state.playerTwo}
+      player={this.state.playerOne}
       handleChange={this.handleChange}
+      label={'Player 1'}
+      name={'playerOne'}
       />
 
+      <TwoPlayerField
+      player={this.state.playerTwo}
+      handleChange={this.handleChange}
+      label={'Player 2'}
+      name={'playerTwo'}
+      />
+    </div>
+
+    <div className="row">
+      <TeamLabel gameType={this.state.gameType} team='Two'/>
+    </div>
+
+    <div className="row">
        <TeamsField
        gameType={this.state.gameType}
-       playerThree={this.state.playerThree}
-       playerFour={this.state.playerFour}
+       player={this.state.playerThree}
        handleChange={this.handleChange}
+       label={'Player 3'}
+       name={'playerThree'}
         />
+
+        <TeamsField
+        gameType={this.state.gameType}
+        player={this.state.playerFour}
+        handleChange={this.handleChange}
+        label={'Player 4'}
+        name={'playerFour'}
+         />
+      </div>
 
       <button className="button" type="submit" value="Submit">Submit</button>
     </form>

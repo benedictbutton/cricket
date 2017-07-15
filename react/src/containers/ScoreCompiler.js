@@ -7,11 +7,15 @@ class ScoreCompiler extends Component {
     super(props);
     this.state = {
     scores: [],
+    playerOne: '',
+    playerTwo: '',
     message: null
   };
   this.updateHits = this.updateHits.bind(this);
   this.handleSave = this.handleSave.bind(this);
   this.confirmSave = this.confirmSave.bind(this);
+  this.assignPlayerOne = this.assignPlayerOne.bind(this);
+  this.assignPlayerTwo = this.assignPlayerTwo.bind(this)
 }
 
   componentDidMount() {
@@ -52,9 +56,30 @@ class ScoreCompiler extends Component {
   })
   .then(response => response.json())
   .then(responseData => {
-    this.setState({ scores: responseData.scores,
-    message: responseData.message });
+    this.setState({ scores: responseData.scores, message: responseData.message });
   });
+}
+
+assignPlayerOne(players) {
+  let playerOne;
+  if(players.length === 4) {
+    playerOne = `${players[0].player_name}/${players[1].player_name}`;
+  }
+  if(players.length === 2) {
+    playerOne = `${players[0].player_name}`;
+  }
+    return playerOne;
+}
+
+assignPlayerTwo(players) {
+  let playerTwo;
+  if(players.length === 4) {
+    playerTwo = `${players[2].player_name}/${players[3].player_name}`;
+  }
+  if(players.length === 2) {
+    playerTwo = players[1].player_name;
+  }
+    return playerTwo;
 }
 
 confirmSave() {
@@ -69,8 +94,11 @@ render() {
     <div>
       <ScoreContainer
       scores={this.state.scores}
+      gameType={this.state.gameType}
       updateHits={this.updateHits}
       handleSave={this.handleSave}
+      assignPlayerOne={this.assignPlayerOne}
+      assignPlayerTwo={this.assignPlayerTwo}
        />
     </div>
     </div>

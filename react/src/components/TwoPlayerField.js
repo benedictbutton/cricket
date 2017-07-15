@@ -2,25 +2,14 @@ import React from 'react';
 
 const TwoPlayerField = (props) => {
   return(
-    <div className="row">
-      <div className="small-6 columns">
-        <label>Player 1
+    <div className="small-4 columns">
+        <label>{props.label}
           <input type="text"
-          name="playerOne"
-          value={props.playerOne}
+          name={props.name}
+          value={props.player}
           onChange={props.handleChange}
           />
         </label>
-        </div>
-      <div className="small-6 columns">
-        <label>Player 2
-          <input type="text"
-          name="playerTwo"
-          value={props.playerTwo}
-          onChange={props.handleChange}
-          />
-        </label>
-      </div>
     </div>
   );
 }

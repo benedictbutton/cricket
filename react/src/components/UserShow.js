@@ -10,7 +10,7 @@ const UserShow = (props) => {
     </div>
   </div>
   <div className="media-object-section main-section">
-  <div className="row small-up-1 medium-up-2 large-up-2 collapse">
+  <div className="row small-up-1 medium-up-1 large-up-2 collapse">
   <div className="small-2 columns"><h1 className="even">First Name</h1></div>
   <div className="small-2 columns"><h1 className="hits">{props.firstName}</h1></div>
   <div className="small-2 columns"><h1 className="odd">Last Name</h1></div>

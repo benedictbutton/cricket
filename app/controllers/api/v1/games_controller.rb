@@ -8,7 +8,6 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def show
-    binding.pry
     @game = Game.find(params[:id])
   end
 
@@ -17,13 +16,20 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    game_title = "#{params[:playerOne]} vs. #{params[:playerTwo]}"
+    game_type = params[:gameType]
+    game_title = ''
+    if game_type == 'twoPlayer'
+      game_title = "#{params[:playerOne]} vs. #{params[:playerTwo]}"
+    else
+      game_title = "#{params[:playerOne]}/#{params[:playerTwo]} vs. #{params[:playerThree]}/#{params[:playerFour]}"
+    end
     body = request.body.read
     parsed = JSON.parse(body)
     scores = []
-    game = Game.new(title: game_title, user_id: current_user.id)
+    game = Game.new(title: game_title, user_id: current_user.id, game_type: game_type)
     if game.save
     parsed.each do |player|
+      if player[0] != 'gameType'
       player = Player.create(name: player[1])
       points_area = 20
       while points_area > 13
@@ -33,6 +39,7 @@ class Api::V1::GamesController < ApplicationController
         end
         # score = Score.create(player_id: player.id, game_id: game.id, hits: 0, region: 25)
         scores << score
+      end
       end
       render json: { message: "Players setup", game: game.id }
       else

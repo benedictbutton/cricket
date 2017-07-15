@@ -8,7 +8,8 @@ class UserShowContainer extends Component {
       this.state = {
         user: [],
         current_user: [],
-        player: []
+        player: [],
+        error: null
       };
       // this.handleLink = this.handleLink.bind(this);
   }
