@@ -4,7 +4,7 @@ import PlayerName from '../components/PlayerName';
 import ScoreOne from '../components/ScoreOne';
 import ScoreTwo from '../components/ScoreTwo';
 import ScoreRegions from '../components/ScoreRegions';
-import ScoreField from '../components/ScoreField';
+import ScoreSave from '../components/ScoreSave';
 
 class ScoreContainer extends Component {
   constructor(props) {
