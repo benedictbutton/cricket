@@ -12,29 +12,15 @@ render() {
   }
 
   return(
-    <div className="row">
-
-      <div className="small-6 columns">
-        <label>Player 3
+      <div className="small-4 columns">
+        <label>{this.props.label}
           <input type="text"
-          name="playerThree"
-          value={this.props.playerThree}
+          name={this.props.name}
+          value={this.props.player}
           onChange={this.props.handleChange}
           />
         </label>
       </div>
-
-       <div className="small-6 columns">
-        <label>Player 4
-          <input type="text"
-          name="playerFour"
-          value={this.props.playerFour}
-          onChange={this.props.handleChange}
-          />
-        </label>
-      </div>
-
-    </div>
   );
 }
 }
