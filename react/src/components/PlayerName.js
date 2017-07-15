@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 
-class PlayerName extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const PlayerName = (props) => {
     return(
-      <h2 className="player-scoreboard" onChange={this.props.handleUpdate}>{this.props.player}
+      <h2 className="player-scoreboard" onChange={props.handleUpdate}>{props.player}
       </h2>
     );
   }
-}
 
 export default PlayerName;
