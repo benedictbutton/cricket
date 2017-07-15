@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ScoreCompiler from './ScoreCompiler';
+import PlayerName from '../components/PlayerName';
 import ScoreOne from '../components/ScoreOne';
 import ScoreTwo from '../components/ScoreTwo';
 import ScoreRegions from '../components/ScoreRegions';
@@ -12,6 +13,7 @@ class ScoreContainer extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSort = this.handleSort.bind(this);
+    this.handleNames = this.handleNames.bind(this);
   }
 
   handleChange(id, hits) {
@@ -22,11 +24,24 @@ class ScoreContainer extends Component {
     return a.id - b.id;
   }
 
-render() {
-let playerOne;
-let playerTwo;
+  handleNames(playerNames, obj) {
+    let last = playerNames.length - 1
 
-this.props.scores.sort(this.handleSort);
+    if (playerNames[last].player_name !== obj.player_name) {
+      playerNames.push(obj)
+    }
+      return playerNames
+  }
+
+render() {
+
+let sortedScores = this.props.scores.sort(this.handleSort);
+
+let players = sortedScores.reduce((this.handleNames), [sortedScores[0]]);
+
+let playerOne = this.props.assignPlayerOne(players);
+
+let playerTwo = this.props.assignPlayerTwo(players);
 
   let scoreOne = this.props.scores.slice(0, 7);
   let scoreTwo = this.props.scores.slice(7,14);
@@ -34,7 +49,6 @@ this.props.scores.sort(this.handleSort);
   let scoreTwoIndex = 27;
 
      scoreOne = scoreOne.map(score => {
-       playerOne = score.player_name;
        let indexOne = scoreOneIndex - score.region
            return(
              <ScoreOne
@@ -49,7 +63,6 @@ this.props.scores.sort(this.handleSort);
            });
 
            scoreTwo = scoreTwo.map(score => {
-             playerTwo = score.player_name
              let indexTwo = scoreTwoIndex - score.region;
              return(
              <ScoreTwo
@@ -67,7 +80,7 @@ return(
 <div>
     <div className="row align-center">
       <div className="medium-4 columns">
-        <h2 className="player-scoreboard">{playerOne}</h2>
+        <PlayerName player={playerOne} />
       </div>
 
       <div className="small-3 columns">
@@ -77,10 +90,10 @@ return(
           message={this.props.message} handleSave={this.props.handleSave}/>
         </form>
       </div>
-
       <div className="medium-4 columns">
-        <h2 className="player-scoreboard">{playerTwo}</h2>
+        <PlayerName player={playerTwo} />
       </div>
+
     </div>
 
   <div className="containment" flex>
@@ -98,7 +111,6 @@ return(
       </div>
       </div>
     </div>
-
 </div>
 )
 }

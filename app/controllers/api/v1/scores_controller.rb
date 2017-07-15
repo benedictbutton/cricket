@@ -5,7 +5,7 @@ class Api::V1::ScoresController < ApplicationController
   def show
     scores = []
     game = Game.find(params[:id])
-      record = 0
+    record = 0
       game.scores.each do |score|
       points = {}
       points[:id] = score.id
@@ -17,7 +17,11 @@ class Api::V1::ScoresController < ApplicationController
       scores << points
       record = record + 1
       end
-    render json: {game: scores}.to_json
+      if game.user == current_user
+        render json: {game: scores}.to_json
+      else
+        redirect_to root_path, notice: "Unauthorized record access"
+    end
   end
 
   def new
@@ -42,11 +46,11 @@ class Api::V1::ScoresController < ApplicationController
       @scores << score
       # Score.find(score[:id])
     end
-    if @scores.length == 14
-      flash[:notice] = "Game saved successfully"
-    else
-      flash[:alert] = "Apologies. There was an issue saving the game. Please try again."
-    end
+    # if @scores.length == 14
+    #   flash[:notice] = "Game saved successfully"
+    # else
+    #   flash[:alert] = "Apologies. There was an issue saving the game. Please try again."
+    # end
     render json: {scores: @scores, message: "Game saved successfully"}.to_json
   end
 
