@@ -5,6 +5,7 @@ import ScoreOne from '../components/ScoreOne';
 import ScoreTwo from '../components/ScoreTwo';
 import ScoreRegions from '../components/ScoreRegions';
 import ScoreSave from '../components/ScoreSave';
+import ScoreDelete from '../components/ScoreDelete';
 
 class ScoreContainer extends Component {
   constructor(props) {
@@ -25,12 +26,12 @@ class ScoreContainer extends Component {
   }
 
   handleNames(playerNames, obj) {
-    let last = playerNames.length - 1
+    let last = playerNames.length - 1;
 
     if (playerNames[last].player_name !== obj.player_name) {
-      playerNames.push(obj)
+      playerNames.push(obj);
     }
-      return playerNames
+      return playerNames;
   }
 
 render() {
@@ -49,7 +50,7 @@ let playerTwo = this.props.assignPlayerTwo(players);
   let scoreTwoIndex = 27;
 
      scoreOne = scoreOne.map(score => {
-       let indexOne = scoreOneIndex - score.region
+       let indexOne = scoreOneIndex - score.region;
            return(
              <ScoreOne
                  key={score.id}
@@ -84,26 +85,30 @@ return(
       </div>
 
       <div className="small-3 columns">
-        <form>
-          <ScoreField
-          score={this.props.scores}
-          message={this.props.message} handleSave={this.props.handleSave}/>
-        </form>
+        <div className="row align-spaced">
+          <form>
+            <ScoreSave
+             handleSave={this.props.handleSave}/>
+
+            <div className="divider" />
+
+            <ScoreDelete handleDelete={this.props.handleDelete}/>
+          </form>
+        </div>
       </div>
       <div className="medium-4 columns">
         <PlayerName player={playerTwo} />
       </div>
-
     </div>
 
   <div className="containment" flex>
     <div className="row align-center">
       <div className="medium-4 columns">
-      {scoreOne}
+        {scoreOne}
       </div>
 
       <div className="small-3 columns">
-      <ScoreRegions />
+        <ScoreRegions />
       </div>
 
       <div className="medium-4 columns">
@@ -111,7 +116,7 @@ return(
       </div>
       </div>
     </div>
-</div>
+  </div>
 )
 }
 }

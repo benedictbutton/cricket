@@ -25,16 +25,17 @@ class PlayerIndexContainer extends Component {
 
   render() {
     let players = this.state.players.map(player => {
-      let id = player.id
-      let playerName = player.name
+      let id = player.id;
+      let playerName = player.name;
       return (
          <PlayerTile
+            key={id}
             id={id}
             playerName={playerName}
           />
-
       )
     });
+
     return(
       <div className="row">
       <div className="small-8 small columns">

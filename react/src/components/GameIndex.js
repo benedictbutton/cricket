@@ -11,12 +11,6 @@ const GameIndex = props => {
       </div>
     <hr />
     </div>
-
-
-
-
-
-
   )
 }
 

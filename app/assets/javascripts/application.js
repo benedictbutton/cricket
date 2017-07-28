@@ -14,5 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require foundation.reveal.js
 //= require_tree .
 $(function(){ $(document).foundation(); });
