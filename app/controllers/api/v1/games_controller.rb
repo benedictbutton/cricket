@@ -1,5 +1,5 @@
 class Api::V1::GamesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
@@ -48,6 +48,16 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def update
+  end
+
+  def destroy
+    game = Game.find(params[:id])
+    game.delete
+    scores = game.scores
+    scores.each do |score|
+      score.delete
+    end
+    render json: { alert: "Game successfully deleted" }
   end
 
   private

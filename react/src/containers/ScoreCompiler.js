@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import ScoreContainer from './ScoreContainer';
 import SaveAlert from '../components/SaveAlert';
+import DeleteAlert from '../components/DeleteAlert';
 
 class ScoreCompiler extends Component {
   constructor(props) {
@@ -9,11 +11,14 @@ class ScoreCompiler extends Component {
     scores: [],
     playerOne: '',
     playerTwo: '',
-    message: null
+    message: null,
+    alert: null
   };
   this.updateHits = this.updateHits.bind(this);
   this.handleSave = this.handleSave.bind(this);
+  this.handleDelete = this.handleDelete.bind(this);
   this.confirmSave = this.confirmSave.bind(this);
+  this.confirmDelete = this.confirmDelete.bind(this);
   this.assignPlayerOne = this.assignPlayerOne.bind(this);
   this.assignPlayerTwo = this.assignPlayerTwo.bind(this)
 }
@@ -60,6 +65,26 @@ class ScoreCompiler extends Component {
   });
 }
 
+handleDelete(event) {
+  fetch(`/api/v1/games/${this.props.params.id}`, {
+    credentials: 'same-origin',
+    method: 'DELETE'
+  })
+  .then(response => {
+    if(response.ok) {
+      return response.json();
+    } else {
+      console.log('error');
+    }
+    })
+  .then(responseData => {
+    this.setState({ alert: responseData.alert });
+    debugger;
+    let path = '/games';
+    browserHistory.push(path);
+  });
+}
+
 assignPlayerOne(players) {
   let playerOne;
   if(players.length === 4) {
@@ -86,17 +111,29 @@ confirmSave() {
   this.setState({ message: null });
 }
 
+confirmDelete() {
+  debugger;
+  this.setState({ alert: null });
+}
+
 render() {
   return(
     <div>
       {this.state.message && <SaveAlert message={this.state.message} confirmSave={this.confirmSave} />
      }
+
+     {this.state.alert && <DeleteAlert
+     alert={this.props.alert}
+     confirmDelete={this.confirmDelete} />
+   }
+
     <div>
       <ScoreContainer
       scores={this.state.scores}
       gameType={this.state.gameType}
       updateHits={this.updateHits}
       handleSave={this.handleSave}
+      handleDelete={this.handleDelete}
       assignPlayerOne={this.assignPlayerOne}
       assignPlayerTwo={this.assignPlayerTwo}
        />
