@@ -20,7 +20,7 @@ class ScoreCompiler extends Component {
   this.confirmSave = this.confirmSave.bind(this);
   this.confirmDelete = this.confirmDelete.bind(this);
   this.assignPlayerOne = this.assignPlayerOne.bind(this);
-  this.assignPlayerTwo = this.assignPlayerTwo.bind(this)
+  this.assignPlayerTwo = this.assignPlayerTwo.bind(this);
 }
 
   componentDidMount() {
@@ -79,7 +79,6 @@ handleDelete(event) {
     })
   .then(responseData => {
     this.setState({ alert: responseData.alert });
-    debugger;
     let path = '/games';
     browserHistory.push(path);
   });
@@ -112,7 +111,6 @@ confirmSave() {
 }
 
 confirmDelete() {
-  debugger;
   this.setState({ alert: null });
 }
 
@@ -142,6 +140,5 @@ render() {
   )
 }
 }
-
 
 export default ScoreCompiler;
