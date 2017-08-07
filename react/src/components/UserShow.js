@@ -6,7 +6,7 @@ const UserShow = (props) => {
     <div className="media-object">
     <div className="media-object-section">
     <div className="thumbnail">
-    <img src="/assets/board.jpg" width="300px" />
+      <img src={`${props.avatar}`} width="300px" />
     </div>
   </div>
   <div className="media-object-section main-section">
@@ -23,7 +23,11 @@ const UserShow = (props) => {
   </div>
 </div>
     <a className="button" href="/auth/register/edit">Edit</a>
-    </div>
+
+    <div className="divider" />
+
+    <a className="button" href={`/users/${props.id}/edit`}>Upload Profile Photo</a>
+</div>
   )
 }
 

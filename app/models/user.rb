@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_one :player
   accepts_nested_attributes_for :player
+
+  mount_uploader :avatar, ProfilePhotoUploader
 end

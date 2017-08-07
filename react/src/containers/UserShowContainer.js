@@ -8,11 +8,12 @@ class UserShowContainer extends Component {
       this.state = {
         user: [],
         current_user: [],
+        avatar: '',
         player: [],
         error: null
       };
-      // this.handleLink = this.handleLink.bind(this);
   }
+
 
   componentDidMount() {
     let userId = this.props.params.id;
@@ -22,30 +23,27 @@ class UserShowContainer extends Component {
       return parsed;
     })
     .then (responseData => {
-      this.setState({ user: responseData, current_user: responseData.current_user, player: responseData.player });
+      this.setState({ user: responseData, current_user: responseData.current_user, avatar: responseData.current_user.avatar.medium.url, player: responseData.player });
     });
   }
 
-  // handleLink(event) {
-  //   event.preventDefault();
-  //   let path = '/auth/register/edit';
-  //   browserHistory.push(path);
-  // }
-
 render() {
+  let id = this.state.current_user.id;
   let player = this.state.player.name;
   let firstName = this.state.current_user.first_name;
   let lastName = this.state.current_user.last_name;
   let email = this.state.current_user.email;
+  let avatar = this.state.avatar;
 
   return(
     <div>
       <UserShow
+        id={id}
         player={player}
         firstName={firstName}
         lastName={lastName}
         email={email}
-        handleLink={this.handleLink}
+        avatar={avatar}
         />
     </div>
   )
