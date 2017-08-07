@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
     if @user == current_user
       render json: { user: @user, current_user: @current_user, player: @player }
     else
-      flash[:aler] = "You are not authorized to view this record."
+      flash[:alert] = "You are not authorized to view this record."
       redirect_to root_path
     end
   end
@@ -27,17 +27,3 @@ class Api::V1::UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, player_attributes: [:name, :user_id])
   end
 end
-
-  # def show
-  #   @user = []
-  #   user = User.find(params[:id])
-  #   user_info = {}
-  #   user_info[:id] = user.id
-  #   user_info[:first_name] = user.first_name
-  #   user_info[:last_name] = user.last_name
-  #   user_info[:username] = user.username
-  #   user_info[:email] = user.email
-  #   render json: user.username
-  #   @user << user_info
-  # end
-  # render json: { user: @user }

@@ -16,8 +16,10 @@ end
   gem 'devise', git: 'https://github.com/plataformatec/devise.git'
   gem 'httparty'
   gem 'foundation-rails', "6.3.0.0"
+  gem 'carrierwave'
   gem 'fog'
   gem 'fog-aws'
+  gem 'mini_magick'
 
 group :test do
   gem 'coveralls', require: false
