@@ -46,10 +46,12 @@ class PlayerShowContainer extends Component {
     });
 
   return(
-    <div>
-      <h1 className="player-name">{playerName}</h1>
-      <div className="game">{games}</div>
-      </div>
+    <div className="row">
+      <div className="small-8 small columns">
+          <h1 className="player-name">{playerName}</h1>
+          <div className="game">{games}</div>
+        </div>
+    </div>
     );
   }
 }
