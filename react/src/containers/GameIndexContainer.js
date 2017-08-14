@@ -38,7 +38,6 @@ render() {
       title={title}
       date={date}
       />
-
       )
     });
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import PlayerShow from '../components/PlayerShow';
+import GameIndex from '../components/GameIndex';
 
 class PlayerShowContainer extends Component {
   constructor(props) {
@@ -27,13 +28,19 @@ class PlayerShowContainer extends Component {
   render() {
     let playerName;
     let games = this.state.gameRecord.map(record => {
-      let gameTitle = record.title;
-      let gameId =  record.id;
+      let title = record.title;
+      let id =  record.id;
       playerName = this.state.playerRecord.name;
+      let dateString = Date.parse(record.created_at);
+      let d = new Date(dateString);
+      let date = d.toDateString();
+
       return(
-      <PlayerShow
-      gameTitle={gameTitle}
-      gameId={gameId}
+      <GameIndex
+      key={id}
+      id={id}
+      title={title}
+      date={date}
       />
     )
     });
@@ -41,9 +48,7 @@ class PlayerShowContainer extends Component {
   return(
     <div>
       <h1 className="player-name">{playerName}</h1>
-        <ul>
-        {games}
-        </ul>
+      <div className="game">{games}</div>
       </div>
     );
   }
