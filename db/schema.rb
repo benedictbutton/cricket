@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627224352) do
+ActiveRecord::Schema.define(version: 20170815201031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170627224352) do
     t.string "game_type"
     t.bigint "game_id"
     t.bigint "user_id"
+    t.boolean "points", default: false
     t.index ["game_type", "game_id"], name: "index_games_on_game_type_and_game_id"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
