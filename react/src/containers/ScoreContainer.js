@@ -35,14 +35,13 @@ class ScoreContainer extends Component {
   }
 
 render() {
-
 let sortedScores = this.props.scores.sort(this.handleSort);
 
 let players = sortedScores.reduce((this.handleNames), [sortedScores[0]]);
 
 let playerOne = this.props.assignPlayerOne(players);
 
-let playerTwo = this.props.assignPlayerTwo(players);
+let playerTwo =           this.props.assignPlayerTwo(players);
 
   let scoreOne = this.props.scores.slice(0, 7);
   let scoreTwo = this.props.scores.slice(7,14);

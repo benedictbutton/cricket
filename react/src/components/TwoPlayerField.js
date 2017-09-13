@@ -1,4 +1,6 @@
 import React from 'react';
+import ExistingPlayer from './ExistingPlayer';
+
 
 const TwoPlayerField = (props) => {
   return(
@@ -10,7 +12,7 @@ const TwoPlayerField = (props) => {
           onChange={props.handleChange}
           />
         </label>
-    </div>
+      </div>
   );
 }
 
