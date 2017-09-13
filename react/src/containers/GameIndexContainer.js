@@ -19,7 +19,6 @@ class GameIndexContainer extends Component {
       let parsed = response.json();
       return parsed })
     .then (responseData => {
-      debugger;
       this.setState({ games: responseData  });
     });
   }
