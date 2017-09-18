@@ -4,6 +4,7 @@ import TwoPlayerField from '../components/TwoPlayerField';
 import TeamsField from '../components/TeamsField';
 import TeamLabel from '../components/TeamLabel';
 import ExistingPlayerContainer from './ExistingPlayerContainer';
+import PlayerNameAlert from '../components/PlayerNameAlert';
 
 class GameFormContainer extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class GameFormContainer extends Component {
       existingPlayer: [0,0,0,0],
       formPayload: {},
       data: [],
-      messages: []
+      messages: null
     };
     this.handleGameType = this.handleGameType.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -25,6 +26,7 @@ class GameFormContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addNewGame = this.addNewGame.bind(this);
     this.handleForm = this.handleForm.bind(this);
+    this.confirmPlayerAlert = this.confirmPlayerAlert.bind(this);
   }
 
   handleChange(event) {
@@ -73,10 +75,16 @@ addNewGame(formPayload) {
       return parsed;
     })
     .then(responseData => {
-      this.setState({ data: [...this.state.data, responseData] });
-      let gameId = responseData.game;
-      let path = `/games/${gameId}`;
-      browserHistory.push(path);
+      if(responseData.message) {
+        this.setState({
+          messages: responseData.message
+        });
+      } else {
+        this.setState({ data: [...this.state.data, responseData] });
+        let gameId = responseData.game;
+        let path = `/games/${gameId}`;
+        browserHistory.push(path);
+      }
     });
   }
 
@@ -163,9 +171,34 @@ handleForm(name, player) {
   this.addNewGame(this.state.formPayload);
   }
 
+  confirmPlayerAlert() {
+    this.setState({ messages: null });
+  }
+
   render() {
+    let errors;
+    if(this.state.messages) {
+    errors = this.state.messages.map((error) => {
+      alert = error;
+      return(
+        <PlayerNameAlert
+          alert={alert}
+          />
+      )
+    });
+  }
     return(
     <form onSubmit={this.handleSubmit}>
+
+      {this.state.messages &&
+        <div className="callout">
+          {errors}
+        <button className="close-button" aria-label="Dismiss alert" type="button" onClick={this.confirmPlayerAlert}>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    }
+
       <label>Select Game Type
         <select value={this.state.value} onChange={this.handleGameType}>
           <option value='twoPlayer'>Two Player</option>
