@@ -4,12 +4,14 @@ class Api::V1::PlayersController < ApplicationController
 
 def index
   players = []
+  players << Player.find_by(user_id: current_user.id)
   games = Game.where(user_id: current_user.id)
   games.each do |game|
     game.players.select(:name, :id).distinct.each do |player|
       players << player
     end
   end
+  players = players.uniq
   render json: players
 end
 
@@ -31,10 +33,6 @@ def create
   else
     render json: { message: player.errors.full_messages }
   end
-end
-
-def edit
-  binding.pry
 end
 
 def player_params

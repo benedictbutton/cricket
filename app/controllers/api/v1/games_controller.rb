@@ -16,20 +16,32 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
+    error_messages = []
     body = request.body.read
     parsed = JSON.parse(body)
     game_type = params[:gameType]
     game_title = create_game_title(game_type, params)
     game = Game.new(title: game_title, user_id: current_user.id, game_type: game_type)
+    if game_type == 'twoPlayer'
+      parsed.delete('playerThree')
+      parsed.delete('playerFour')
+    end
     if game.save
     parsed.each do |player|
       unless player[0] == 'gameType'
         if player[1].is_a?(String)
           player = Player.create(name: player[1])
-          build_score(player, game)
         else
           player = Player.find(player[1])
+        end
+        if player.save
           build_score(player, game)
+        # else
+        #   error = "Player name #{player.name} " + "#{player.errors.messages[:name][0]}"
+        #   error_messages << error
+        end
+        if !player.errors.messages.empty?
+          error_messages << player.errors.messages[:name][0]
         end
       # points_area = 20
       # while points_area > 13
@@ -41,10 +53,13 @@ class Api::V1::GamesController < ApplicationController
         # scores << score
       end
       end
-      render json: { message: "Players setup", game: game.id }
-      else
-        render json: { message: game.errors.full_messages }
     end
+      if error_messages.empty?
+        render json: { game: game.id }
+      else
+        game.delete
+        render json: { message: error_messages }
+      end
   end
 
   def update
