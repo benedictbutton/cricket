@@ -36,6 +36,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'dotenv-rails'
   gem 'faker'
+  gem 'derailed'
 end
 
 group :development do
