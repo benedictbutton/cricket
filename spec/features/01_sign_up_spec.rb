@@ -16,7 +16,7 @@ feature "user creates account" do
 
       click_on "Sign Up"
 
-      expect(current_path).to eq '/users/sign_up'
+      expect(current_path).to eq '/auth/register/cmon_let_me_in'
       expect(page).to have_content("Create Account")
       expect(page).to_not have_link("Sign Out")
     end
@@ -26,7 +26,7 @@ feature "user creates account" do
 
       fill_in('First Name', with: 'John')
       fill_in('Last Name', with: 'Doe')
-      fill_in('Username', with: 'jdoe11')
+      fill_in('Player Name', with: 'jdoe11')
       fill_in('Password', with: 'password123')
       fill_in('Password Confirmation', with: 'password123')
       fill_in('Email', with: 'jdoe@email.com')

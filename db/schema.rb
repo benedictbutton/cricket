@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170815201031) do
     t.bigint "user_id"
     t.boolean "points", default: false
     t.index ["game_type", "game_id"], name: "index_games_on_game_type_and_game_id"
-    t.index ["user_id"], name: "index_games_on_user_id"
+    t.index ["user_id"], name: "index_games_on_user_id", unique: true
   end
 
   create_table "players", force: :cascade do |t|
