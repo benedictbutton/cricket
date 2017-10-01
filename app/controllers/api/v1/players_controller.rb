@@ -24,6 +24,7 @@ def show
 end
 
 def new
+  @player = Player.new
 end
 
 def create
@@ -36,7 +37,7 @@ def create
 end
 
 def player_params
-  params.require(:player).permit(:name)
+  params.require(:player).permit(:name, :user_id)
 end
 
 end

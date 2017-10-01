@@ -45,9 +45,9 @@ feature "user creates account" do
       expect(page).to have_content "First name can't be blank"
       expect(page).to have_content "Last name can't be blank"
       expect(page).to have_content "Email can't be blank"
-      expect(page).to have_content "Username can't be blank"
+      expect(page).to have_content "Player name can't be blank"
       expect(page).to have_content "Password can't be blank"
-      expect(current_path).to eq '/users'
+      expect(current_path).to eq '/auth/register'
     end
 
     scenario "fills in form incorrectly and submits" do
@@ -55,14 +55,14 @@ feature "user creates account" do
 
       fill_in('First Name', with: 'John')
       fill_in('Last Name', with: 'Doe')
-      fill_in('Username', with: 'jdoe11')
+      fill_in('Player Name', with: 'jdoe11')
       fill_in('Password', with: 'password123')
       fill_in('Password Confirmation', with: 'Password123')
 
       click_button "Sign Up"
 
       expect(page).to have_content "Password confirmation doesn't match"
-      expect(current_path).to eq '/users'
+      expect(current_path).to eq '/auth/register'
     end
   end
 end

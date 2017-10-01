@@ -30,11 +30,13 @@ class Api::V1::GamesController < ApplicationController
     parsed.each do |player|
       unless player[0] == 'gameType'
         if player[1].is_a?(String)
-          player = Player.create(name: player[1])
+          player = Player.new(name: player[1])
+          name_check = player.valid?(:create_player)
         else
           player = Player.find(player[1])
+          name_check = true
         end
-        if player.save
+        if name_check && player.save
           build_score(player, game)
         # else
         #   error = "Player name #{player.name} " + "#{player.errors.messages[:name][0]}"
