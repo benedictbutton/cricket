@@ -1,5 +1,5 @@
 class Player < ApplicationRecord
-  validate :player_names, on: :create
+  validate :player_names, on: :create_player
   validates :name, presence: true
 
   has_many :scores
@@ -7,8 +7,9 @@ class Player < ApplicationRecord
 
   def player_names
     player_names = []
-    id = Game.last[:user_id]
-     games = Game.where(user_id: id)
+   id = Game.last[:user_id]
+   player_names << User.find(id).player.name
+   games = Game.where(user_id: id)
      games.each do |game|
        game.players.select(:name, :id).distinct.each do |player|
          player_names << player.name
@@ -18,5 +19,5 @@ class Player < ApplicationRecord
      if players.include?(name)
        errors.add(:name, "Player name '#{name}' has already been taken")
      end
-  end
+   end
 end
