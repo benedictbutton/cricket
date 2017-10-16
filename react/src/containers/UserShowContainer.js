@@ -14,7 +14,6 @@ class UserShowContainer extends Component {
       };
   }
 
-
   componentDidMount() {
     let userId = this.props.params.id;
     fetch(`/api/v1/users/${userId}`, {credentials: 'same-origin'})
@@ -23,8 +22,10 @@ class UserShowContainer extends Component {
       return parsed;
     })
     .then (responseData => {
+      debugger;
       this.setState({ user: responseData, current_user: responseData.current_user, avatar: responseData.current_user.avatar.medium.url, player: responseData.player });
     });
+    debugger;
   }
 
 render() {
