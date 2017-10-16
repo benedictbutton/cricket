@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute, Router, browserHistory, withRouter } from 'react-router';
+
+//App Components
 import HomeContainer from './containers/HomeContainer';
 import UserIndexContainer from './containers/UserIndexContainer';
 import UserShowContainer from './containers/UserShowContainer';
@@ -28,8 +30,6 @@ const App = (props) => {
         <Route path=":id" component={PlayerShowContainer}/>
       </Route>
   </Router>
-
-
   );
 }
 

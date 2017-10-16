@@ -12,7 +12,6 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    binding.pry
   end
 
   def player_params
