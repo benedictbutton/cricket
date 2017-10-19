@@ -11,8 +11,8 @@ class GameFormContainer extends Component {
     super(props);
     this.state = {
       gameType: 'twoPlayer',
-      playerOne: null,
-      playerTwo: null,
+      playerOne: '',
+      playerTwo: '',
       playerThree: '',
       playerFour: '',
       existingPlayer: [0,0,0,0],
