@@ -4,7 +4,8 @@ var config = {
   },
   output: {
     path: './app/assets/javascripts',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath:   'd36lpqgxkhc8zn.cloudfront.net'
   },
   module: {
     loaders: [
@@ -21,10 +22,8 @@ var config = {
 if (process.env.NODE_ENV === 'production') {
   delete config.devtool;
   var webpack = require('webpack');
-  const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
   config.plugins = [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
   ];
 }
 
