@@ -12,8 +12,7 @@ end
   gem 'jquery-rails'
   gem 'jbuilder', '~> 2.5'
   gem 'uglifier', '>= 1.3.0'
-  gem 'devise', git: 'https://github.com/plataformatec/devise.git'
-  gem 'webpacker'
+  gem 'devise'
   gem 'foundation-rails', "6.3.0.0"
   gem 'httparty'
   gem 'carrierwave'
