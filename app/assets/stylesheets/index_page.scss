@@ -1,7 +1,7 @@
 @import "settings";
 
 body {
-  background: url('chalk-background.jpg') no-repeat center center fixed;
+  background: url(asset-path('chalk-background.jpg')) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -13,7 +13,7 @@ Header
   min-height: 250px;
   background-color: black;
   text-align: center;
-  background-image: url('faded-darts.jpeg');
+  background-image: url(asset-path('faded-darts.jpeg'));
   background-repeat: no-repeat;
   -moz-background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
