@@ -1,7 +1,7 @@
 @import "settings";
 
 body {
-  background: url('chalk-background.jpg') no-repeat center center fixed;
+  background: asset_path('chalk-background.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
