@@ -1,0 +1,287 @@
+/* line 3, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+body {
+  background: asset_data_uri("chalk-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/******************************
+Header
+******************************/
+/* line 12, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.top-bar {
+  min-height: 250px;
+  background-color: black;
+  text-align: center;
+  background-image: asset_data_uri("faded-darts.jpeg");
+  background-repeat: no-repeat;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 90% 100%;
+  background-position: right;
+}
+
+/* line 24, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.top-bar-right {
+  justify-content: space-around;
+  margin: 0;
+}
+
+/* line 29, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.title-bar {
+  background-color: #282828;
+  margin-bottom: .5%;
+  font-size: 1.5rem;
+}
+
+/* line 35, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.header-text {
+  font-family: 'Times New Roman', serif;
+  display: inline-block;
+  font-size: 6rem;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 3rem;
+  padding-bottom: 0;
+}
+
+/* line 45, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+a:hover {
+  color: white;
+}
+
+/* line 49, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.menu-vertical {
+  background-color: black;
+  list-style: none;
+}
+
+/* line 54, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.username a {
+  color: red;
+  margin-right: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* line 61, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.float-center {
+  width: 40%;
+  height: 40%;
+  margin: 0;
+  display: inline-block;
+  align-self: center;
+}
+
+/******************************
+Home Page
+******************************/
+/* line 74, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.sign-up {
+  font-family: 'Chalkboard', serif;
+  color: white;
+  text-decoration: underline;
+}
+
+/* line 80, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.description {
+  font-family: 'Chalkboard', serif;
+  font-size: 2rem;
+  color: white;
+}
+
+/******************************
+Profile
+******************************/
+/* line 94, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.profile-username {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 99, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.profile h2 {
+  font-size: 2rem;
+  color: white;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* line 106, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.profile ul {
+  font-size: 1.70rem;
+  color: white;
+  font-family: 'Chalkboard', serif;
+}
+
+/******************************
+Forms
+******************************/
+/* line 116, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.account-signup {
+  font-family: 'Chalkboard', serif;
+  color: white;
+  text-decoration: underline;
+}
+
+/* line 122, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.button {
+  background-color: green;
+}
+
+/* line 126, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.login {
+  font-family: 'Chalkboard', serif;
+  color: white;
+  text-decoration: underline;
+  margin: 25px;
+}
+
+/* line 133, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.close-button {
+  font-size: 25px;
+}
+
+/* line 137, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+label {
+  color: white;
+  margin-left: 3px;
+  margin-bottom: 0px;
+  font-size: 1.25rem;
+}
+
+/* line 144, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.player-menu {
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* line 149, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.existing-player {
+  color: red;
+}
+
+/******************************
+Edit Form
+******************************/
+/* line 157, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.edit {
+  color: white;
+}
+
+/* line 161, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.avatar {
+  color: white;
+  text-decoration: underline;
+  text-align: left;
+}
+
+/******************************
+Scoreboard
+******************************/
+/* line 177, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.player-scoreboard {
+  text-align: center;
+  color: white;
+  font-family: 'Chalkboard', serif;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+/* line 185, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.hits {
+  font-family: 'Chalkboard', serif;
+  color: white;
+  text-align: center;
+  min-height: 73px;
+  font-weight: bold;
+  margin: 0;
+  border-color: white;
+  border-style: solid;
+}
+
+/* line 196, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.even {
+  border: solid;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 0;
+  min-height: 73px;
+}
+
+/* line 205, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.odd {
+  border: solid;
+  text-align: center;
+  background-color: red;
+  color: white;
+  margin: 0;
+  min-height: 70px;
+}
+
+/******************************
+Game
+******************************/
+/* line 217, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.games {
+  color: white;
+  text-decoration: underline;
+  text-align: left;
+}
+
+/* line 223, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.game {
+  color: white;
+  font-family: 'Chalkboard', serif;
+  font-size: 1.75rem;
+}
+
+/* line 229, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.team-labels {
+  color: white;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/******************************
+Player
+******************************/
+/* line 239, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.players {
+  color: white;
+  text-decoration: underline;
+}
+
+/* line 244, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.player {
+  color: white;
+  font-family: 'Chalkboard', serif;
+  font-size: 1.75rem;
+}
+
+/* line 250, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.player-name {
+  color: white;
+  text-decoration: underline;
+}
+
+/* line 255, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.player-games {
+  color: white;
+  list-style: none;
+}
+
+/* line 260, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+.divider {
+  width: 10px;
+  height: auto;
+  display: inline-block;
+}
+
+/******************************
+Errors
+******************************/
+/* line 270, /Users/benedictdaly/Dropbox/MAC/Apps/cricket/app/assets/stylesheets/index_page.scss */
+#errors {
+  color: white;
+}
