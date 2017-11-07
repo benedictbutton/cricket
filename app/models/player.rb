@@ -6,7 +6,7 @@ class Player < ApplicationRecord
   has_many :games, through: :scores
 
   def player_names
-    player_names = []
+   player_names = []
    id = Game.last[:user_id]
    player_names << User.find(id).player.name
    games = Game.where(user_id: id)
@@ -19,5 +19,5 @@ class Player < ApplicationRecord
      if players.include?(name)
        errors.add(:name, "Player name '#{name}' has already been taken")
      end
-   end
+  end
 end
