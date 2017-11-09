@@ -42,11 +42,15 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*arg)
    # For Rails 3.1+ asset pipeline compatibility:
-    ActionController::Base.helpers.asset_path(
-    "/assets/" + [version_name,
-      "blank-avatar.jpeg"
-    ].compact.join('_')
-    )
+
+    # ActionController::Base.helpers.asset_path(
+    # "/assets/" + [
+    #   "blank-avatar.jpeg"
+    # ].compact.join('_')
+    # )
+    @name ||= Digest::MD5.hexdigest(File.dirname("/assets/blank-avatar.jpeg"))
+    image = "/assets/blank-avatar-"
+    ActionController::Base.helpers.asset_path("#{image}#{@name}.jpeg")
   end
   # Process files as they are uploaded:
   # process scale: [200, 300]
@@ -70,5 +74,16 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+  # def filename
+  #   if original_filename
+  #     @hash ||= Digest::MD5.hexdigest(File.dirname(current_path))
+  #     "#{file.basename.split('_').last}-#{@hash}.#{file.extension}"
+  #   end
+  # end
+#   def filename
+#   if original_filename
+#     @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
+#     "#{@name}.#{file.extension}"
+#   end
+# end
 end
