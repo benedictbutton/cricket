@@ -44,7 +44,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   #  For Rails 3.1+ asset pipeline compatibility:
     ActionController::Base.helpers.asset_path(
     "/assets/" + [
-    Rails.application.assets.find_asset('blank-avatar.jpeg').digest_path
+    "blank-avatar.jpeg"
     ].compact.join('_')
     )
   end
