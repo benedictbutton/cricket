@@ -45,7 +45,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
     ActionController::Base.helpers.asset_path(
     "/assets/" +
       [
-        'blank-avatar.jpeg'
+        Rails.application.assets.find_asset('blank-avatar.jpeg').digest_path
       ].join('_')
   )
   end
