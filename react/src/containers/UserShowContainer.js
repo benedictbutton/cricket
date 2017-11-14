@@ -22,7 +22,6 @@ class UserShowContainer extends Component {
       return parsed;
     })
     .then (responseData => {
-      debugger;
       this.setState({ user: responseData, current_user: responseData.current_user, avatar: responseData.current_user.avatar.medium.url, player: responseData.player });
     });
   }
