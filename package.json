@@ -30,7 +30,8 @@
     "webpack": "^1.13.0"
   },
   "devDependencies": {
-    "enzyme": "^2.2.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "isparta-loader": "^2.0.0",
     "jasmine-ajax": "^3.2.0",
     "jasmine-core": "^2.4.1",
@@ -43,8 +44,12 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
-    "phantomjs-prebuilt": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.16",
     "react-addons-test-utils": "^15.0.2",
-    "redux-devtools": "^3.2.0"
+    "react-test-renderer": "^16.1.1",
+    "react-test-utils": "^0.0.1",
+    "redux-devtools": "^3.2.0",
+    "sinon": "^4.1.2",
+    "sinon-stub-promise": "^4.0.0"
   }
 }
