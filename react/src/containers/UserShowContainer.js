@@ -7,10 +7,11 @@ class UserShowContainer extends Component {
     super(props);
       this.state = {
         user: [],
-        current_user: [],
+        current_user: {},
         avatar: '',
         player: [],
-        error: null
+        error: null,
+        test: 'run'
       };
   }
 
