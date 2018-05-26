@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserShow = (props) => {
+  debugger;
   return(
     <div>
     <div className="media-object">
