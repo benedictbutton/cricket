@@ -19,6 +19,7 @@ end
   gem 'fog'
   gem 'fog-aws'
   gem 'mini_magick'
+  gem 'omniauth-google-oauth2'
 
 group :test do
   gem 'coveralls', require: false
