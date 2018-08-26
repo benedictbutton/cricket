@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import App from '../App';
 import PlayerShow from '../components/PlayerShow';
 import GameIndex from '../components/GameIndex';
 
@@ -14,7 +15,7 @@ class PlayerShowContainer extends Component {
 }
 
   componentDidMount() {
-    let playerId = this.props.params.id;
+    let playerId = this.props.match.params.id;
     fetch(`/api/v1/players/${playerId}`)
     .then(response => {
       let parsed = response.json();
@@ -36,12 +37,12 @@ class PlayerShowContainer extends Component {
       let date = d.toDateString();
 
       return(
-      <GameIndex
-      key={id}
-      id={id}
-      title={title}
-      date={date}
-      />
+          <GameIndex
+            key={id}
+            id={id}
+            title={title}
+            date={date}
+          />
     )
     });
 
@@ -50,7 +51,7 @@ class PlayerShowContainer extends Component {
       <div className="small-8 small columns">
           <h1 className="player-name">{playerName}</h1>
           <div className="game">{games}</div>
-        </div>
+      </div>
     </div>
     );
   }

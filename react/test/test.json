@@ -1,0 +1,54 @@
+  {
+
+"user": {
+"id": 36,
+"email": "benedictdaly@gmail.com",
+"created_at": "2018-05-31T02:06:38.779Z",
+"updated_at": "2018-08-11T22:12:19.382Z",
+"first_name": "Benedict",
+"last_name": "Daly",
+"avatar": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/Daly_Shield.gif",
+"large": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/large_Daly_Shield.gif"
+},
+"medium": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/medium_Daly_Shield.gif"
+},
+"thumb": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/thumb_Daly_Shield.gif"
+}
+},
+"provider": "google_oauth2",
+"uid": "101280638815788818359"
+},
+"current_user": {
+"id": 36,
+"email": "benedictdaly@gmail.com",
+"created_at": "2018-05-31T02:06:38.779Z",
+"updated_at": "2018-08-11T22:12:19.382Z",
+"first_name": "Benedict",
+"last_name": "Daly",
+"avatar": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/Daly_Shield.gif",
+"large": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/large_Daly_Shield.gif"
+},
+"medium": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/medium_Daly_Shield.gif"
+},
+"thumb": {
+"url": "https://cricket-production.s3.amazonaws.com/uploads/user/avatar/36/thumb_Daly_Shield.gif"
+}
+},
+"provider": "google_oauth2",
+"uid": "101280638815788818359"
+},
+"player": {
+"id": 589,
+"name": "Benedict",
+"created_at": "2018-05-31T02:06:38.781Z",
+"updated_at": "2018-05-31T02:06:38.781Z",
+"user_id": 36
+}
+}
