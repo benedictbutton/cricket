@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 import UserShow from '../components/UserShow';
 
 class UserShowContainer extends Component {
@@ -16,7 +15,7 @@ class UserShowContainer extends Component {
   }
 
   componentDidMount() {
-    let userId = this.props.params.id;
+    let userId = this.props.match.params.id;
     fetch(`/api/v1/users/${userId}`, {credentials: 'same-origin'})
     .then(response => {
       let parsed = response.json();
@@ -37,14 +36,16 @@ render() {
 
   return(
     <div>
-      <UserShow
-        id={id}
-        player={player}
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        avatar={avatar}
-        />
+      <div>
+        <UserShow
+          id={id}
+          player={player}
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          avatar={avatar}
+          />
+      </div>
     </div>
   )
 }

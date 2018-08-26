@@ -17,7 +17,7 @@ class GameIndexContainer extends Component {
       })
     .then(response => {
       let parsed = response.json();
-      return parsed })
+      return parsed; })
     .then (responseData => {
       this.setState({ games: responseData  });
     });
@@ -32,10 +32,10 @@ render() {
     let date = d.toDateString();
     return(
       <GameIndex
-      key={id}
-      id={id}
-      title={title}
-      date={date}
+        key={id}
+        id={id}
+        title={title}
+        date={date}
       />
       )
     });
@@ -50,5 +50,4 @@ render() {
     )
   }
 }
-
 export default GameIndexContainer;

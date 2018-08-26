@@ -253,3 +253,265 @@
 // }
 //
 //   arrayCopy = insideArrayFw;
+
+function sum(num) {
+  //when adding first 2 > than num
+  let collection = [];
+  let array = [];
+  let n = num;
+
+  let addNumbers = (array) => {
+    let number = array[0] + array[1];
+    // console.log(number);
+
+    return number;
+  };
+
+  array[0] = Array(num).fill(1);
+  // collection.push(array[i]);
+
+  for(let i=0; array[i].length>2; i++) {
+    let twoNumberArr = array[i].slice(-2);
+    let number = addNumbers(twoNumberArr);
+    let newArray = array[i].slice(0, -2);
+
+
+
+        newArray.push(number);
+        console.log('newArray is: ' + newArray);
+        // collection.push(newArray);
+    let combos = combination(newArray);
+        // collection.push(newArray);
+
+        collection = collection.concat(combos);
+        console.log('collecton is: ' + collection);
+        array.push(newArray);
+        console.log('array is: ' + array);
+    // console.log('array is: ' + newArray);
+    // console.log('array is: ' + array);
+
+    // array = combination(array);
+    }
+//
+//
+//
+function combination (array) {
+  let i = 0;
+  let y = -1;
+  let newNumber;
+  let newArray = [];
+  newArray.push(array);
+  // console.log('newArray is: ' + newArray);
+
+
+  while(newArray[i].length>2) {
+    console.log('newArray[i] is: ' + newArray);
+    // console.log('test');
+    // console.log(newArray[i]);
+    // console.log('y is: ' + y);
+    // console.log('i is: '+ i);
+    let frontArray = newArray[i].slice(0, y);
+    console.log('frontArray array is: ' + frontArray);
+    if(frontArray.length>=2) {
+      let backArray = newArray[i].slice(y);
+      console.log('backArray is: ' + backArray);
+      let numbers = frontArray.slice(-2);
+      newNumber = addNumbers(numbers);
+      frontArray.splice(-2, 2, newNumber);
+      console.log('now frontArray is: ' + frontArray);
+      console.log('now backArray is: ' + backArray);
+      let combinedArray = frontArray.concat(backArray);
+      console.log('combibnedArray is: ' + combinedArray);
+      newArray.push(combinedArray);
+      i++;
+      y += -1;
+      console.log('test: ' + newArray[i]);
+    // } else if(newArray[i].length>2){
+    //     combination(newArray[i]);
+  } else {
+    console.log('asdfasfdsfad')
+      k = 2;
+      let frontArray = newArray[i].slice(0, k);
+      let backArray = newArray[i].slice(k);
+      // console.log('backArray is: ' + backArray);
+      if(backArray.length>=1) {
+
+        // console.log('fjopripaewfqaf');
+        let numbers = frontArray.slice(-2);
+        newNumber = addNumbers(numbers);
+        frontArray.splice(-2, 2, newNumber);
+        let combinedArray = frontArray.concat(backArray);
+        newArray.push(combinedArray);
+        i++;
+        k++;
+      } else {
+        return newArray;
+      }
+
+
+  }
+
+  // if(
+  // newArray[newArray.length-1]<2){
+  //     combination(newArray);
+  //   }
+    //  else {
+    //   return newArray;
+    // }
+  }
+return newArray;
+//get down to 2 pairs of numbers, then send them through different arrangements function
+}
+
+/
+
+
+
+// let newArray = array.slice(1, -1);
+// if(newArray[newArray.length-1]>2)
+// newArray = combination(newArray);
+// console.log(newArray);
+
+// array = array.concat(newArray);
+console.log(collection);
+return collection.length + 1;
+}
+
+console.dir(sum(20));
+
+
+// const _items = Symbol('stackedItems');
+//
+// class Stack {
+//   constructer() {
+//     this[_items] = [];
+//   }
+//
+//   push(element) {
+//     this[_items].push(element);
+//   }
+//
+//   pop() {
+//     const s = this;
+//     s.pop();
+//
+//     return s;
+//   }
+//
+//   isEmpty() {
+//     return this[_items].length===0;
+//   }
+// }
+//
+// let stack = new Stack();
+
+//
+//
+//
+//
+// console.log(stack.pop());
+//
+
+// console.log(objectSymbols);
+// console.log( objectSymbols[0]);
+// stack.push(7);
+// stack.push(11);
+// stack.push(9);
+// stack.push(3);
+// let objectSymbols = Object.getOwnPropertySymbols(stack);
+// console.log(objectSymbols[0]);
+
+
+
+
+//find index of last 1
+
+//1 1 1 1 1 1 1
+//1 1 1 1 1 2
+//1 1 1 1 3
+//1 1 1 4
+//1 1 5
+//1 6
+
+//1 1 1 2 2
+//1 1 2 3
+//1 2 4
+
+
+
+//1 2 2 2
+//2 2 3
+//3 4
+
+// const items = new WeakMap();
+//
+// class Stack {
+//   constructor() {
+//     items.set(this, [])
+//     console.log(this);
+//   }
+//
+//   push(element) {
+//     console.log(items);
+//     const s = items.get(this);
+//     s.push(element);
+//     console.log(s);
+//     console.log(this.items);
+//   }
+//
+//   pop() {
+//     const s = items.get(this);
+//     const r = s.pop();
+//
+//       return r;
+//   }
+//
+//   isEmpty() {
+//       const s = items.get(this);
+//       return s.length===0;
+//     }
+// }
+//
+// let stack = new Stack();
+//
+
+
+// console.log(stack);
+// console.log(stack.stackedItems);
+//
+//
+// function baseConverter( decNumber, base) {
+//    const remStack = new Stack();
+//    const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// // {6}
+// let number = decNumber;
+//
+// let rem;
+// let baseString = '';
+//
+//  if (!( base >= 2 && base <= 36)) {
+//    return '';
+//  }
+//
+// while (number > 0) {
+//   rem = Math.floor( number % base);
+//   remStack.push( rem);
+//   number = Math.floor( number / base);
+// }
+//
+// while (!remStack.isEmpty()) {
+//   baseString += digits[remStack.pop()];
+//   // {7} } return baseString; }
+// }
+// return baseString;
+// }
+//
+// console.log(baseConverter(100345, 35));
+
+// let stack = new Stack();
+
+// stack.push(3);
+
+// console.log(stack.pop());
+
+ // => 9

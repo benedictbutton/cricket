@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import TwoPlayerField from '../components/TwoPlayerField';
 import TeamsField from '../components/TeamsField';
 import TeamLabel from '../components/TeamLabel';
@@ -18,7 +18,8 @@ class GameFormContainer extends Component {
       existingPlayer: [0,0,0,0],
       formPayload: {},
       data: [],
-      messages: null
+      messages: null,
+      toGame: false
     };
     this.handleGameType = this.handleGameType.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -80,10 +81,10 @@ addNewGame(formPayload) {
           messages: responseData.message
         });
       } else {
-        this.setState({ data: [...this.state.data, responseData] });
-        let gameId = responseData.game;
-        let path = `/games/${gameId}`;
-        browserHistory.push(path);
+        this.setState({ data: [...this.state.data, responseData], toGame: true });
+        // let gameId = responseData.game;
+        // let path = `/games/${gameId}`;
+        // this.props.history.push(path);
       }
     });
   }
@@ -176,6 +177,8 @@ handleForm(name, player) {
   }
 
   render() {
+    const { from } = this.props.location.state || '/';
+    const { toGame } = this.state;
     let errors;
     if(this.state.messages) {
     errors = this.state.messages.map((error) => {
@@ -187,7 +190,15 @@ handleForm(name, player) {
       )
     });
   }
+
+    if(this.state.toGame === true) {
+      return (
+        <Redirect to={`${this.state.data[0].game}`} />
+      )
+    }
+
     return(
+    // <div>
     <form onSubmit={this.handleSubmit}>
 
       {this.state.messages &&
