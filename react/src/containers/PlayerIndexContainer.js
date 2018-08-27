@@ -17,7 +17,7 @@ class PlayerIndexContainer extends Component {
       })
     .then(response => {
       let parsed = response.json();
-      return parsed })
+      return parsed; })
     .then (responseData => {
       this.setState({ players: responseData  });
     });
@@ -38,10 +38,10 @@ class PlayerIndexContainer extends Component {
 
     return(
       <div className="row">
-      <div className="small-8 small columns">
-        <h1 className="players">Players</h1>
-          {players}
-      </div>
+        <div className="small-8 small columns">
+          <h1 className="players">Players</h1>
+            {players}
+        </div>
       </div>
     )
   }

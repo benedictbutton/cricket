@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 import ScoreContainer from './ScoreContainer';
 import SaveAlert from '../components/SaveAlert';
 import DeleteAlert from '../components/DeleteAlert';
@@ -24,7 +23,7 @@ class ScoreCompiler extends Component {
 }
 
   componentDidMount() {
-      let gameId = this.props.params.id;
+      let gameId = this.props.match.params.id;
       fetch(`/api/v1/scores/${gameId}`, { credentials: 'same-origin' })
       .then(response => response.json())
       .then(responseData => {
@@ -53,7 +52,7 @@ class ScoreCompiler extends Component {
   //     updatedHitsAttribute[id].hits = this.state.scores[id].hits-3;
   //   }
 
-  fetch(`/api/v1/scores/${this.props.params.id}`, {
+  fetch(`/api/v1/scores/${this.props.match.params.id}`, {
     credentials: 'same-origin',
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -66,7 +65,7 @@ class ScoreCompiler extends Component {
 }
 
 handleDelete(event) {
-  fetch(`/api/v1/games/${this.props.params.id}`, {
+  fetch(`/api/v1/games/${this.props.match.params.id}`, {
     credentials: 'same-origin',
     method: 'DELETE'
   })

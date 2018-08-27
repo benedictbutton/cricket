@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute, Router, browserHistory, withRouter } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 
 //App Components
 import HomeContainer from './containers/HomeContainer';
@@ -14,22 +14,18 @@ import PlayerShowContainer from './containers/PlayerShowContainer';
 
 const App = (props) => {
   return(
-    <Router history={browserHistory}>
-    <Route path='/'  component={HomeContainer}/>
-      <Route path="users">
-        <IndexRoute component={UserIndexContainer}/>
-        <Route path=":id" component={UserShowContainer}/>
-      </Route>
-      <Route path="games">
-        <IndexRoute component={GameIndexContainer}/>
-        <Route path="new" component={GameFormContainer}/>
-        <Route path=":id" component={ScoreCompiler}/>
-      </Route>
-      <Route path="players">
-        <IndexRoute component={PlayerIndexContainer}/>
-        <Route path=":id" component={PlayerShowContainer}/>
-      </Route>
-  </Router>
+  <div>
+    <Switch>
+      <Route exact path='/'  component={HomeContainer} />
+      <Route exact path="/users" component={UserIndexContainer}/>
+      <Route path="/users/:id" component={UserShowContainer}/>
+      <Route exact path="/games" component={GameIndexContainer}/>
+      <Route path="/games/new" component={GameFormContainer}/>
+      <Route path="/games/:id" component={ScoreCompiler}/>
+      <Route exact path="/players" component={PlayerIndexContainer} />
+      <Route path="/players/:id" component={PlayerShowContainer}/>
+    </Switch>
+  </div>
   );
 }
 

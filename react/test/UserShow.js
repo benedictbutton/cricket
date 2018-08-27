@@ -19,14 +19,14 @@ describe('UserShow', () => {
   });
 
   it('should render the UserShow component with specific props', () => {
-    expect(wrapper.prop('avatar')).toEqual(
-      'poop'
+    expect(wrapper.prop('firstName')).toEqual(
+      'test'
     );
   });
 
   it('should render the UserShow component with specific props', () => {
-    expect(wrapper.instance().prop('test')).toEqual(
-      'run'
+    expect(wrapper.prop('email')).toEqual(
+      "testuser90@email.com"
     );
   });
 

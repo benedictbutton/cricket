@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 import ExistingPlayer from '../components/ExistingPlayer';
 
 class ExistingPlayerContainer extends Component {
@@ -17,7 +16,7 @@ class ExistingPlayerContainer extends Component {
       })
     .then(response => {
       let parsed = response.json();
-      return parsed })
+      return parsed; })
     .then (responseData => {
       this.setState({ players: responseData  });
     });
