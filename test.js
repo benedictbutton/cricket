@@ -255,6 +255,7 @@
 //   arrayCopy = insideArrayFw;
 
 function sum(num) {
+  console.log('test');
   //when adding first 2 > than num
   let collection = [];
   let array = [];
@@ -329,7 +330,7 @@ function combination (array) {
     // } else if(newArray[i].length>2){
     //     combination(newArray[i]);
   } else {
-    console.log('asdfasfdsfad')
+    console.log('asdfasfdsfad');
       k = 2;
       let frontArray = newArray[i].slice(0, k);
       let backArray = newArray[i].slice(k);
@@ -347,8 +348,6 @@ function combination (array) {
       } else {
         return newArray;
       }
-
-
   }
 
   // if(
@@ -361,11 +360,9 @@ function combination (array) {
   }
 return newArray;
 //get down to 2 pairs of numbers, then send them through different arrangements function
+
+
 }
-
-/
-
-
 
 // let newArray = array.slice(1, -1);
 // if(newArray[newArray.length-1]>2)
@@ -377,7 +374,8 @@ console.log(collection);
 return collection.length + 1;
 }
 
-console.dir(sum(20));
+
+console.dir(sum(10));
 
 
 // const _items = Symbol('stackedItems');
@@ -515,3 +513,21 @@ console.dir(sum(20));
 // console.log(stack.pop());
 
  // => 9
+
+
+// function sum(num) {
+//   let array = []
+//   let collection = [];
+//
+//   array[0].Array(num).fill(1);
+//
+//   while(array[array.length-1]>2) {
+//     let digits = array[array.length-1].slice(-2);
+//     let digitSum = digits[0] + digits[1];
+//
+//   }
+//
+//   1 1 1 1 1
+//   1 1 1 2
+//   1 1 3
+//   1 4
