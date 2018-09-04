@@ -5,7 +5,7 @@ var config = {
     path: './react/src/main.js',
   },
   output: {
-    path: path.resolve(__dirname, '../app/assets/javascripts'),
+    path: './app/assets/javascripts',
     filename: 'bundle.js',
     publicPath:   'd36lpqgxkhc8zn.cloudfront.net'
   },
