@@ -9,7 +9,7 @@
   },
   "scripts": {
     "heroku-postbuild": "npm run webpack --mode production",
-    "start": "yarn run webpack --watch",
+    "start": "yarn run webpack --watch --mode development",
     "test": "node_modules/.bin/karma start react/karma.conf.js",
     "webpack": "webpack --config webpack.config.js"
   },
@@ -51,6 +51,7 @@
     "react-test-utils": "^0.0.1",
     "redux-devtools": "^3.2.0",
     "sinon": "^4.1.2",
-    "sinon-stub-promise": "^4.0.0"
+    "sinon-stub-promise": "^4.0.0",
+    "webpack-cli": "^3.1.0"
   }
 }

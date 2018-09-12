@@ -32,14 +32,17 @@ class ScoreCompiler extends Component {
     }
 
     updateHits(id, hits) {
-      if(hits < 3) {
-        this.state.scores[id].hits += 1;
+      (hits>3) ? markedHits(id, hits) : pointHits(id, hits);
+
+       function markedHits(id, hits) {
+        this.state.scores[id].hits += (hits>3) ?  1 : -3;
       }
-      else {
-        this.state.scores[id].hits -= 3;
+
+      pointHits(id, hits) {
+        (hits<=3) ? markedHits :  this.state.scores[id].hits = scores[id]*hits;
       }
-      this.setState(this.state);
-    }
+        this.setState(this.state);
+      }
 
   handleSave (event) {
     event.preventDefault();
@@ -114,6 +117,7 @@ confirmDelete() {
 }
 
 render() {
+  debugger;
   return(
     <div>
       {this.state.message && <SaveAlert message={this.state.message} confirmSave={this.confirmSave} />

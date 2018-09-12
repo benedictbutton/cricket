@@ -19,9 +19,11 @@ class GameFormContainer extends Component {
       formPayload: {},
       data: [],
       messages: null,
-      toGame: false
+      toGame: false,
+      playPointsOff: true
     };
     this.handleGameType = this.handleGameType.bind(this);
+    this.handlePlayPoints = this.handlePlayPoints.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleExistingPlayer = this.handleExistingPlayer.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -93,6 +95,10 @@ handleGameType(event) {
   this.setState ({ gameType: event.target.value  });
 }
 
+handlePlayPoints(event) {
+  this.setState ({ playPointsOff: !this.state.playPointsOff });
+}
+
 handleForm(name, player) {
   switch(name) {
     case 'playerOne':
@@ -114,6 +120,10 @@ handleForm(name, player) {
     case 'gameType':
       let gameType = {gameType: player};
       Object.assign(this.state.formPayload, playerOne, playerTwo, playerThree, playerFour, gameType);
+      break;
+    case 'playPointsOff':
+      let playPointsOff = {playPointsOff: player};
+      Object.assign(...this.state.formPayload, playPointsOff);
   }
 }
 
@@ -166,6 +176,11 @@ handleForm(name, player) {
             let gameType = 'gameType';
             player = this.state.gameType;
             this.handleForm(gameType, player);
+            break;
+          case 5:
+            let playPointsOff = 'playPointsOff';
+            playPointsOff = this.state.playPointsOff;
+            this.handleForm(playPointsOff);
             break;
         }
       }
@@ -255,13 +270,16 @@ handleForm(name, player) {
         />
 
         <TeamsField
-        gameType={this.state.gameType}
-        player={this.state.playerFour}
-        handleChange={this.handleChange}
-        label={'Player 4'}
-        name={'playerFour'}
+          gameType={this.state.gameType}
+          player={this.state.playerFour}
+          handleChange={this.handleChange}
+          label={'Player 4'}
+          name={'playerFour'}
          />
       </div>
+
+        <PointsField
+          onClick
 
       <button className="button" type="submit" value="Submit">Submit</button>
     </form>

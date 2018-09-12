@@ -19,6 +19,7 @@ class Api::V1::GamesController < ApplicationController
     error_messages = []
     body = request.body.read
     parsed = JSON.parse(body)
+    binding.pry
     game_type = params[:gameType]
     game_title = create_game_title(game_type, params)
     game = Game.new(title: game_title, user_id: current_user.id, game_type: game_type)
