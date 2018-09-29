@@ -11,13 +11,14 @@
     "heroku-postbuild": "npm run webpack --mode production",
     "start": "yarn run webpack --watch --mode development",
     "test": "node_modules/.bin/karma start react/karma.conf.js",
-    "webpack": "webpack --config webpack.config.js"
+    "webpack": "webpack --config ./react/webpack.config.js"
   },
   "author": "Ivan Lasorsa",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.8.0",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.5.0",

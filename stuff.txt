@@ -95,3 +95,44 @@ handleHits(prevHits) {
       break;
   }
   }
+
+  import React, { Component } from 'react';
+
+  class Score extends Component {
+    constructor(props) {
+      super(props);
+      }
+
+  render() {
+    return(
+          <h1 className="hits" onClick={() => {this.props.handleChange(this.props.id, this.props.hits) }}>
+          {(() => { handlePointDisplay (this.props.hits)
+            switch(this.props.hits) {
+              case 1: return '/';
+              case 2: return 'X';
+              case 3: return '⨂';
+              default: return " ";
+            }
+       })()}
+       </h1>
+    )
+  }
+  }
+
+  export default Score;
+
+  case 1:
+    return {
+      ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits + 1, log: 'X'} })
+      }
+    case 2:
+      return {
+        ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits + 1, log: String.fromCharCode(10754)}
+      })
+      }
+      case 3:
+        return {
+          ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits - 3, log: " "}
+        })
+        }
+      default: return " ";

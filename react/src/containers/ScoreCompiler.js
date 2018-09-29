@@ -31,18 +31,38 @@ class ScoreCompiler extends Component {
       });
     }
 
-    updateHits(id, hits) {
-      (hits>3) ? markedHits(id, hits) : pointHits(id, hits);
+    updateHits(obj) {
+      let num = obj.id;
+      let noPoints = () => {
+        this.setState((prevState) => {
+          if(!obj.points && obj.hits>=3) {
+            return {
+              ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits - 3} })
+              }
+            }
+          return {
+            ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits + 1} })
+            }
+          }, () => {
+              console.log('completed');
+            });
+          }
 
-       function markedHits(id, hits) {
-        this.state.scores[id].hits += (hits>3) ?  1 : -3;
-      }
+          noPoints(obj);
+    };
 
-      pointHits(id, hits) {
-        (hits<=3) ? markedHits :  this.state.scores[id].hits = scores[id]*hits;
-      }
-        this.setState(this.state);
-      }
+    //   let pointHits = (obj) => {
+    //     (hits>3) ? markedHits(obj.id, obj.hits) :  this.state.scores[id].hits += this.state.scores[id]*hits;
+    //     this.setState(this.state);
+    //     this.handlePointDisplay(hits);
+    // };
+
+
+
+      // let hits = markedHits(obj);
+
+      // (obj.hits<3) ? markedHits(obj) : pointHits(obj);
+  // }
 
   handleSave (event) {
     event.preventDefault();
@@ -117,7 +137,6 @@ confirmDelete() {
 }
 
 render() {
-  debugger;
   return(
     <div>
       {this.state.message && <SaveAlert message={this.state.message} confirmSave={this.confirmSave} />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import PointsField from '../components/PointsField';
 import TwoPlayerField from '../components/TwoPlayerField';
 import TeamsField from '../components/TeamsField';
 import TeamLabel from '../components/TeamLabel';
@@ -20,7 +21,7 @@ class GameFormContainer extends Component {
       data: [],
       messages: null,
       toGame: false,
-      playPointsOff: true
+      playPoints: false
     };
     this.handleGameType = this.handleGameType.bind(this);
     this.handlePlayPoints = this.handlePlayPoints.bind(this);
@@ -95,8 +96,8 @@ handleGameType(event) {
   this.setState ({ gameType: event.target.value  });
 }
 
-handlePlayPoints(event) {
-  this.setState ({ playPointsOff: !this.state.playPointsOff });
+handlePlayPoints() {
+  this.setState ({ playPoints: !this.state.playPoints });
 }
 
 handleForm(name, player) {
@@ -121,16 +122,16 @@ handleForm(name, player) {
       let gameType = {gameType: player};
       Object.assign(this.state.formPayload, playerOne, playerTwo, playerThree, playerFour, gameType);
       break;
-    case 'playPointsOff':
-      let playPointsOff = {playPointsOff: player};
-      Object.assign(...this.state.formPayload, playPointsOff);
+    case 'playPoints':
+      let playPoints = {playPoints: player};
+      Object.assign(this.state.formPayload, playerOne, playerTwo, playerThree, playerFour, gameType, playPoints);
   }
 }
 
  handleSubmit(event) {
     event.preventDefault();
     let player;
-    for(let i=0; i < 5; i++) {
+    for(let i=0; i<6; i++) {
         switch(i) {
           case 0:
             let nameOne = 'playerOne';
@@ -178,9 +179,9 @@ handleForm(name, player) {
             this.handleForm(gameType, player);
             break;
           case 5:
-            let playPointsOff = 'playPointsOff';
-            playPointsOff = this.state.playPointsOff;
-            this.handleForm(playPointsOff);
+            let playPoints = 'playPoints';
+            player = this.state.playPoints;
+            this.handleForm(playPoints, player);
             break;
         }
       }
@@ -245,10 +246,10 @@ handleForm(name, player) {
       />
 
       <TwoPlayerField
-      player={this.state.playerTwo}
-      handleChange={this.handleChange}
-      label={'Player 2'}
-      name={'playerTwo'}
+        player={this.state.playerTwo}
+        handleChange={this.handleChange}
+        label={'Player 2'}
+        name={'playerTwo'}
       />
 
       <ExistingPlayerContainer
@@ -262,11 +263,11 @@ handleForm(name, player) {
 
     <div className="row">
        <TeamsField
-       gameType={this.state.gameType}
-       player={this.state.playerThree}
-       handleChange={this.handleChange}
-       label={'Player 3'}
-       name={'playerThree'}
+         gameType={this.state.gameType}
+         player={this.state.playerThree}
+         handleChange={this.handleChange}
+         label={'Player 3'}
+         name={'playerThree'}
         />
 
         <TeamsField
@@ -278,8 +279,7 @@ handleForm(name, player) {
          />
       </div>
 
-        <PointsField
-          onClick
+      <PointsField                handlePlayPoints={this.handlePlayPoints} />
 
       <button className="button" type="submit" value="Submit">Submit</button>
     </form>

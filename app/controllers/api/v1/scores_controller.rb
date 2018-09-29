@@ -14,6 +14,8 @@ class Api::V1::ScoresController < ApplicationController
       points[:region] = score.region
       points[:hits] = score.hits
       points[:record] = record
+      points[:points] = game[:points]
+      points[:log] = ''
       scores << points
       record = record + 1
       end
