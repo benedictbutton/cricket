@@ -31,15 +31,38 @@ class ScoreCompiler extends Component {
       });
     }
 
-    updateHits(id, hits) {
-      if(hits < 3) {
-        this.state.scores[id].hits += 1;
-      }
-      else {
-        this.state.scores[id].hits -= 3;
-      }
-      this.setState(this.state);
-    }
+    updateHits(obj) {
+      let num = obj.id;
+      let noPoints = () => {
+        this.setState((prevState) => {
+          if(!obj.points && obj.hits>=3) {
+            return {
+              ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits - 3} })
+              }
+            }
+          return {
+            ...prevState, scores: Object.assign([...prevState.scores], {[num]: {...prevState.scores[num], hits: prevState.scores[num].hits + 1} })
+            }
+          }, () => {
+              console.log('completed');
+            });
+          }
+
+          noPoints(obj);
+    };
+
+    //   let pointHits = (obj) => {
+    //     (hits>3) ? markedHits(obj.id, obj.hits) :  this.state.scores[id].hits += this.state.scores[id]*hits;
+    //     this.setState(this.state);
+    //     this.handlePointDisplay(hits);
+    // };
+
+
+
+      // let hits = markedHits(obj);
+
+      // (obj.hits<3) ? markedHits(obj) : pointHits(obj);
+  // }
 
   handleSave (event) {
     event.preventDefault();

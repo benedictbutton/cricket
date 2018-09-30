@@ -20,15 +20,16 @@ class Api::V1::GamesController < ApplicationController
     body = request.body.read
     parsed = JSON.parse(body)
     game_type = params[:gameType]
+    play_points = params[:playPoints]
     game_title = create_game_title(game_type, params)
-    game = Game.new(title: game_title, user_id: current_user.id, game_type: game_type)
+    game = Game.new(title: game_title, user_id: current_user.id, game_type: game_type, points: play_points)
     if game_type == 'twoPlayer'
       parsed.delete('playerThree')
       parsed.delete('playerFour')
     end
     if game.save
     parsed.each do |player|
-      unless player[0] == 'gameType'
+      unless player[0] == 'gameType' || player[0] == 'playPoints'
         if player[1].is_a?(String)
           player = Player.new(name: player[1])
           name_check = player.valid?(:create_player)
