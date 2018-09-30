@@ -4,12 +4,14 @@ import GameFormContainer from '../containers/GameFormContainer';
 const PointsField = (props) => {
   return(
     <div className="row">
-      <div className="columns small-3">
-        <div className="row small-collapse medium uncollapse">
-        <div className="columns medium-offset-2">
+    <div className="columns small-3">
+    <div className="row small-up-1 medium-up-2">
+      <div className="columns small-2">
+        <div>
             <label>
               Play Points
             </label>
+          </div>
           </div>
           <div className="columns">
             <div className="switch large">
@@ -20,8 +22,9 @@ const PointsField = (props) => {
               </label>
             </div>
           </div>
-      </div>
-    </div>
+          </div>
+          </div>
+
     </div>
   )
 }
