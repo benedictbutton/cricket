@@ -51,8 +51,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_controller.asset_host =
-  ENV["CDN_ADDRESS"]
+  # config.action_controller.asset_host =
+  # ENV["CDN_ADDRESS"]
 
   config.assets.prefix = "/dev-assets"
 end
