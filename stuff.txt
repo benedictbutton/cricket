@@ -80,21 +80,6 @@ export default UsersContainer;
 
 handleHits(prevHits) {
   debugger;
-  switch(prevHits) {
-    case 0:
-      this.setState({   marks: '/' });
-      break;
-    case 1:
-      this.setState({ marks: 'X' });
-      break;
-    case 2:
-      this.setState({ marks: '⊗' });
-      break;
-    case 3:
-      this.setState({ marks: '' });
-      break;
-  }
-  }
 
   import React, { Component } from 'react';
 
