@@ -54,5 +54,5 @@ Rails.application.configure do
   # config.action_controller.asset_host =
   # ENV["CDN_ADDRESS"]
 
-  config.assets.prefixgit  = "/dev-assets"
+  # config.assets.prefixgit  = "/dev-assets"
 end
