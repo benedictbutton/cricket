@@ -8,7 +8,7 @@
     "node": "8.11.4"
   },
   "scripts": {
-    "heroku-postbuild": "npm run webpack --mode production",
+    "heroku-postbuild": "NODE_ENV=production npm run webpack --mode production",
     "start": "yarn run webpack --watch",
     "test": "node_modules/.bin/karma start react/karma.conf.js",
     "webpack": "node_modules/.bin/webpack --config webpack.config.js"
