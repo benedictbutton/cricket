@@ -8,10 +8,10 @@
     "node": "8.11.4"
   },
   "scripts": {
-    "heroku-postbuild": "NODE_ENV=production npm run webpack --mode production",
-    "start": "yarn run webpack",
+    "heroku-postbuild": "npm run webpack --mode production",
+    "start": "yarn run webpack --watch",
     "test": "node_modules/.bin/karma start react/karma.conf.js",
-    "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
+    "webpack": "webpack --config webpack.config.js"
   },
   "author": "Ivan Lasorsa",
   "license": "MIT",
