@@ -1,5 +1,7 @@
 # README
 
+A scoring app for the dart game Cricket that allows players to record their play. The app includes the options to set up match play with teams or to play with points. In the spirit of competitiveness, players can track matches across time, who played whom, and when necessary, save unfinished matches to resume at a later date.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
