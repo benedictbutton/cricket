@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import GameIndex from '../components/GameIndex';
-import GameFormContainer from './GameFormContainer';
+import React, { Component } from "react";
+import GameIndex from "../components/GameIndex";
+import GameFormContainer from "./GameFormContainer";
 
 class GameIndexContainer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       games: []
@@ -11,43 +11,37 @@ class GameIndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/games', {
-        credentials: 'same-origin',
-        method: 'GET',
+    fetch("/api/v1/games", {
+      credentials: "same-origin",
+      method: "GET"
+    })
+      .then(response => {
+        let parsed = response.json();
+        return parsed;
       })
-    .then(response => {
-      let parsed = response.json();
-      return parsed; })
-    .then (responseData => {
-      this.setState({ games: responseData  });
-    });
+      .then(responseData => {
+        this.setState({ games: responseData });
+      });
   }
 
-render() {
-  let games = this.state.games.map(game => {
-    let id = game.id;
-    let title = game.title;
-    let dateString = Date.parse(game.created_at);
-    let d = new Date(dateString);
-    let date = d.toDateString();
-    return(
-      <GameIndex
-        key={id}
-        id={id}
-        title={title}
-        date={date}
-      />
-      )
+  render() {
+    let games = this.state.games.map(game => {
+      let id = game.id;
+      let title = game.title;
+      let dateString = Date.parse(game.created_at);
+      let d = new Date(dateString);
+      let date = d.toDateString();
+      return <GameIndex key={id} id={id} title={title} date={date} />;
     });
 
-    return(
+    return (
       <div className="row">
         <div className="small-8 small columns">
           <h1 className="games">Games</h1>
-              <div className="game">{games}</div>
+          <div className="game">{games}</div>
         </div>
       </div>
-    )
+    );
   }
 }
 export default GameIndexContainer;
