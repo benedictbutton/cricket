@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const UserTile = (props) => {
-  return(
+const UserTile = props => {
+  return (
     <div className="user-tile">
-      <Link to={`/users/${props.id}`}>
-        {props.username}
-      </Link>
+      <Link to={`/users/${props.id}`}>{props.username}</Link>
     </div>
-  )
-}
+  );
+};
 
 export default UserTile;

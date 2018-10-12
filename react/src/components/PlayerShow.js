@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const PlayerShow = (props) => {
-  return(
-    <GameIndex />
-    )
-}
+const PlayerShow = props => {
+  return <GameIndex />;
+};
 
 export default PlayerShow;

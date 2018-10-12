@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ExistingPlayer from '../components/ExistingPlayer';
+import React, { Component } from "react";
+import ExistingPlayer from "../components/ExistingPlayer";
 
 class ExistingPlayerContainer extends Component {
   constructor(props) {
@@ -10,16 +10,17 @@ class ExistingPlayerContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/players', {
-        credentials: 'same-origin',
-        method: 'GET',
+    fetch("/api/v1/players", {
+      credentials: "same-origin",
+      method: "GET"
+    })
+      .then(response => {
+        let parsed = response.json();
+        return parsed;
       })
-    .then(response => {
-      let parsed = response.json();
-      return parsed; })
-    .then (responseData => {
-      this.setState({ players: responseData  });
-    });
+      .then(responseData => {
+        this.setState({ players: responseData });
+      });
   }
 
   render() {
@@ -27,26 +28,26 @@ class ExistingPlayerContainer extends Component {
       let id = player.id;
       let playerName = player.name;
       return (
-         <ExistingPlayer
-            key={id}
-            id={id}
-            playerName={playerName}
-            handleExistingPlayer={this.props.handleExistingPlayer}
-          />
-      )
+        <ExistingPlayer
+          key={id}
+          id={id}
+          playerName={playerName}
+          handleExistingPlayer={this.props.handleExistingPlayer}
+        />
+      );
     });
 
-    return(
+    return (
       <ul className="dropdown menu" data-dropdown-menu>
-       <li>
-       <a className="player-menu" href="#"> or Choose Existing Player</a>
-       <ul className="menu">
-         {players}
-       </ul>
-       </li>
-       </ul>
-
-      )
+        <li>
+          <a className="player-menu" href="#">
+            {" "}
+            or Choose Existing Player
+          </a>
+          <ul className="menu">{players}</ul>
+        </li>
+      </ul>
+    );
   }
 }
 

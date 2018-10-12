@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Points extends Component {
   constructor(props) {
@@ -6,15 +6,11 @@ class Points extends Component {
   }
 
   render() {
-    if(!this.props.pts) {
+    if (!this.props.pts) {
       return null;
     } else {
-        return(
-          <h1 className="hits">
-            {this.props.total}
-          </h1>
-        )
-      }
+      return <h1 className="hits">{this.props.total}</h1>;
+    }
   }
 }
 
