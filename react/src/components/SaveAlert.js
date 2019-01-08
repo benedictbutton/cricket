@@ -18,24 +18,3 @@ const SaveAlert = props => {
 };
 
 export default SaveAlert;
-
-// import React, { Component } from 'react';
-// import { Link } from 'react-router';
-//
-// class SaveAlert extends Component {
-//   constructor(props) {
-//     super(props);
-// }
-//
-// render() {
-//   if(props.alert === null) {
-//     return null;
-//   }
-//   return(
-//     <div> {props.alert} </div>
-//   )
-// }
-//
-// }
-//
-// export default SaveAlert;

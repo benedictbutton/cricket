@@ -121,3 +121,109 @@ handleHits(prevHits) {
         })
         }
       default: return " ";
+
+
+
+      <Switch location={isModal ? this.previousLocation : location}>
+
+      <Route path="ms/msgs" component={Notifications} />
+      </Switch>
+      {isModal ? <Route component={Notifications} /> : null}
+      <h1>HERE I AM</h1>
+
+
+
+      state = {
+      open: true
+    };
+
+    handleOpen = () => {
+      this.setState({ open: false });
+    };
+
+    handleClose = () => {
+      this.setState({ open: true });
+    };
+
+    import React from "react";
+import Typography from "@material-ui/core/Typography";
+import Modal from "@material-ui/core/Modal";
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`
+  };
+}
+
+const styles = theme => ({
+  paper: {
+    position: "absolute",
+    width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4
+  }
+});
+
+class Notifications extends React.Component {
+  render() {
+    let value = true;
+    const { classes } = this.props;
+    let back = e => {
+      e.stopPropagation();
+      this.history.goBack();
+    };
+
+    return (
+      <div>
+        <Typography gutterBottom>
+          Click to get the full Modal experience!
+        </Typography>
+        <Button onClick={this.handleOpen}>Open Modal</Button>
+        <Modal
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={value}
+        >
+          <div style={getModalStyle()} className={classes.paper}>
+            <Typography variant="h6" id="modal-title">
+              Text in a modal
+            </Typography>
+            <Typography variant="subtitle1" id="simple-modal-description">
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </Typography>
+            <NotificationsWrapped />
+          </div>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+// We need an intermediary variable for handling the recursive nesting.
+const NotificationsWrapped = withStyles(styles)(Notifications);
+
+export default NotificationsWrapped;
+
+// {!requesting && !!errors.length && (
+//            <Errors message="Failure to signup due to:" errors={errors} />
+//          )}
+//          {!requesting && !!messages.length && (
+//            <Messages messages={messages} />
+//          )}
+//          {!requesting && successful && (
+//            <div>
+//              Signup Successful! <Link to="/login">Click here to Login »</Link>
+//            </div>
+//          )}

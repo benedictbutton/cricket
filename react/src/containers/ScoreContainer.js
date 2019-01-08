@@ -74,21 +74,30 @@ class ScoreContainer extends Component {
   }
 
   render() {
+    //One and Two appended as part of any variable name represent the left side and right side of the score board respectively
+
     let pts = this.handlePtsRegion();
+
+    //ensures that the data fetched from the api call is sorted appropriately so that on distributing into the dom, the right information falls into the correct field(player name, scoring region, points per region)
 
     let sortedScores = this.props.scores.sort(this.handleSort);
 
     let players = sortedScores.reduce(this.handleNames, [sortedScores[0]]);
 
+    //pulls player names from data set
     let playerOne = this.props.assignPlayerOne(players);
 
     let playerTwo = this.props.assignPlayerTwo(players);
 
+    //pulls respective scores of each player from data set; 0-7 and 7-14 respresent the scoring fields on the board for each player, which correspond to 15-20 and bull in the actual game (e.g. 0 represents the 20 field and 1 represent the 19 field, etc.)
     let scoreOne = this.props.scores.slice(0, 7);
     let scoreTwo = this.props.scores.slice(7, 14);
+
+    //I honestly don't remember why here. Used to create sequential id's for each record in the DOM. See indexOne and indexTwo below
     let scoreOneIndex = 20;
     let scoreTwoIndex = 27;
 
+    //totalOne & totalTwo: by using reduce to iterate through the scoreOne and scoreTwo data sets, each of these variables receive in order a scoring region's assigned score. With every assignment, a Points component is generated to display the data point of each. Within the reduce function, the conditional ensures the first 3 hits do not add points, but more than 3 does. Logic in the Points component won't display points for > 3 if the points option is not chosen but instead will cycle back to zero on a 4th click
     let initialValue = 0;
     let totalOne = scoreOne.reduce(
       (accumulator, currentValue, idx, initialValue) =>
@@ -113,6 +122,7 @@ class ScoreContainer extends Component {
     scoreOne = scoreOne.map(score => {
       let log = this.handlePointDisplay(score);
       let indexOne = scoreOneIndex - score.region;
+
       return (
         <Score
           key={score.id}
@@ -131,6 +141,7 @@ class ScoreContainer extends Component {
     scoreTwo = scoreTwo.map(score => {
       let log = this.handlePointDisplay(score);
       let indexTwo = scoreTwoIndex - score.region;
+
       return (
         <Score
           key={score.id}

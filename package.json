@@ -9,7 +9,7 @@
   },
   "scripts": {
     "heroku-postbuild": "npm run webpack --mode production",
-    "start": "yarn run webpack --watch",
+    "start": "yarn run webpack --watch --mode development",
     "test": "node_modules/.bin/karma start react/karma.conf.js",
     "webpack": "webpack --config ./react/webpack.config.js"
   },
@@ -29,7 +29,8 @@
     "react-on-rails": "^11.1.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "webpack": "^4.17.1"
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
