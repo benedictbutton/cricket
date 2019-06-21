@@ -1,7 +1,8 @@
 @import "settings";
 
 body {
-  background: url(asset-path('chalk-background.jpg')) no-repeat center center fixed;
+  background: url(asset-path("chalk-background.jpg")) no-repeat center center
+    fixed;
   background-size: cover;
 }
 
@@ -13,7 +14,7 @@ Header
   min-height: 250px;
   background-color: black;
   text-align: center;
-  background-image: url(asset-path('faded-darts.jpeg'));
+  background-image: url(asset-path("faded-darts.jpeg"));
   background-repeat: no-repeat;
   -moz-background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
@@ -28,12 +29,12 @@ Header
 
 .title-bar {
   background-color: #282828;
-  margin-bottom: .5%;
+  margin-bottom: 0.5%;
   font-size: 1.5rem;
 }
 
 .header-text {
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   display: inline-block;
   font-size: 6rem;
   font-weight: bold;
@@ -71,14 +72,14 @@ Home Page
 ******************************/
 
 .sign-up {
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   color: white;
   text-decoration: underline;
   text-align: right;
 }
 
 .log-in {
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   color: white;
   text-decoration: underline;
   text-align: left;
@@ -101,7 +102,7 @@ img.darts {
 
 .description {
   margin: 50px;
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   font-size: 2rem;
   color: white;
 }
@@ -120,34 +121,34 @@ Profile
 }
 
 .profile h2 {
-      font-size: 2rem;
-      color: white;
-      text-align: left;
-      text-decoration: underline;
-      }
+  font-size: 2rem;
+  color: white;
+  text-align: left;
+  text-decoration: underline;
+}
 
-  .profile ul {
-    font-size: 1.70rem;
-    color: white;
-    font-family: 'Chalkboard', serif;
-  }
+.profile ul {
+  font-size: 1.7rem;
+  color: white;
+  font-family: "Chalkboard", serif;
+}
 
-  /******************************
+/******************************
   Forms
   ******************************/
 
-  .account-signup {
-    font-family: 'Chalkboard', serif;
-    color: white;
-    text-decoration: underline;
-  }
+.account-signup {
+  font-family: "Chalkboard", serif;
+  color: white;
+  text-decoration: underline;
+}
 
-  .button {
-    background-color: green;
-  }
+.button {
+  background-color: green;
+}
 
 .login {
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   color: white;
   text-decoration: underline;
   margin: 25px;
@@ -182,10 +183,10 @@ Edit Form
 }
 
 .avatar {
-    color: white;
-    text-decoration: underline;
-    text-align: left;
-  }
+  color: white;
+  text-decoration: underline;
+  text-align: left;
+}
 
 /******************************
 Scoreboard
@@ -200,13 +201,13 @@ Scoreboard
 .player-scoreboard {
   text-align: center;
   color: white;
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   text-decoration: underline;
   font-weight: 400;
 }
 
 .hits {
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   color: white;
   text-align: center;
   min-height: 73px;
@@ -245,7 +246,7 @@ Game
 
 .game {
   color: white;
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   font-size: 1.75rem;
 }
 
@@ -254,7 +255,6 @@ Game
   text-align: left;
   text-decoration: underline;
 }
-
 
 /******************************
 Player
@@ -266,7 +266,7 @@ Player
 
 .player {
   color: white;
-  font-family: 'Chalkboard', serif;
+  font-family: "Chalkboard", serif;
   font-size: 1.75rem;
 }
 
@@ -281,9 +281,9 @@ Player
 }
 
 .divider {
-    width: 10px;
-    height: auto;
-    display: inline-block;
+  width: 10px;
+  height: auto;
+  display: inline-block;
 }
 
 /******************************
@@ -292,4 +292,11 @@ Errors
 
 #errors {
   color: white;
+}
+
+/******************************
+Icons
+******************************/
+.icons {
+  font-size: 0.5rem;
 }

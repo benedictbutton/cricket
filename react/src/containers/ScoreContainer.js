@@ -75,11 +75,8 @@ class ScoreContainer extends Component {
 
   render() {
     //One and Two appended as part of any variable name represent the left side and right side of the score board respectively
-
     let pts = this.handlePtsRegion();
-
     //ensures that the data fetched from the api call is sorted appropriately so that on distributing into the dom, the right information falls into the correct field(player name, scoring region, points per region)
-
     let sortedScores = this.props.scores.sort(this.handleSort);
 
     let players = sortedScores.reduce(this.handleNames, [sortedScores[0]]);
@@ -122,7 +119,6 @@ class ScoreContainer extends Component {
     scoreOne = scoreOne.map(score => {
       let log = this.handlePointDisplay(score);
       let indexOne = scoreOneIndex - score.region;
-
       return (
         <Score
           key={score.id}
@@ -132,7 +128,9 @@ class ScoreContainer extends Component {
           hits={score.hits}
           log={log}
           points={score.points}
+          record={score.record}
           handleChange={this.handleChange}
+          handleClearPts={this.props.handleClearPts}
           handlePointDisplay={this.handlePointDisplay}
         />
       );
@@ -151,7 +149,9 @@ class ScoreContainer extends Component {
           hits={score.hits}
           log={log}
           points={score.points}
+          record={score.record}
           handleChange={this.handleChange}
+          handleClearPts={this.props.handleClearPts}
           handlePointDisplay={this.handlePointDisplay}
         />
       );
@@ -159,32 +159,36 @@ class ScoreContainer extends Component {
 
     return (
       <div>
-        <div className="row align-center">
-          <div className="medium-4 columns">
-            <PlayerName player={playerOne} />
-          </div>
+        <div className="containment">
+          <div className="row align-center">
+            <div className="medium-4 columns">
+              <PlayerName player={playerOne} />
+            </div>
 
-          <div className="small-3 columns">
-            <div className="row align-spaced">
-              <form>
-                <ScoreSave handleSave={this.props.handleSave} />
-
+            <div className="small-3 columns">
+              <div className="row align-center-middle align-spaced small-collapse medium uncollapse">
+                <form>
+                  <div className="small-6 columns align-self-center">
+                    <ScoreSave handleSave={this.props.handleSave} />
+                  </div>
+                </form>
                 <div className="divider" />
-
-                <ScoreDelete handleDelete={this.props.handleDelete} />
-              </form>
+                <form>
+                  <div className="small-6 columns align-self-center">
+                    <ScoreDelete handleDelete={this.props.handleDelete} />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="medium-4 columns">
+              <PlayerName player={playerTwo} />
             </div>
           </div>
-          <div className="medium-4 columns">
-            <PlayerName player={playerTwo} />
-          </div>
-        </div>
 
-        <div className="containment" flex>
           <div className="row align-center">
             <div className="medium-4 columns">
               {scoreOne}
-              <Points total={totalOne} pts={pts} />
+              <Points side="left" total={totalOne} pts={pts} />
             </div>
 
             <div className="small-3 columns">
@@ -194,7 +198,7 @@ class ScoreContainer extends Component {
 
             <div className="medium-4 columns">
               {scoreTwo}
-              <Points total={totalTwo} pts={pts} />
+              <Points side="right" total={totalTwo} pts={pts} />
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const ScoreDelete = props => {
   return (
     <button
-      className="button large"
+      className="button large align-center"
       data-confirm="Danger Zone!!! Are you sure you want to delete?"
       onClick={props.handleDelete}
     >

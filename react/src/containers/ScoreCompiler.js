@@ -14,6 +14,7 @@ class ScoreCompiler extends Component {
       alert: null
     };
     this.updateHits = this.updateHits.bind(this);
+    this.handleClearPts = this.handleClearPts.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.confirmSave = this.confirmSave.bind(this);
@@ -62,20 +63,31 @@ class ScoreCompiler extends Component {
         }
       );
     };
-
     noPoints(obj);
   }
 
-  //   let pointHits = (obj) => {
-  //     (hits>3) ? markedHits(obj.id, obj.hits) :  this.state.scores[id].hits += this.state.scores[id]*hits;
-  //     this.setState(this.state);
-  //     this.handlePointDisplay(hits);
-  // };
-
-  // let hits = markedHits(obj);
-
-  // (obj.hits<3) ? markedHits(obj) : pointHits(obj);
-  // }
+  handleClearPts(obj) {
+    let num = obj.id;
+    let noPoints = () => {
+      this.setState(
+        prevState => {
+          return {
+            ...prevState,
+            scores: Object.assign([...prevState.scores], {
+              [num]: {
+                ...prevState.scores[num],
+                hits: 0
+              }
+            })
+          };
+        },
+        () => {
+          console.log("completed");
+        }
+      );
+    };
+    noPoints(obj);
+  }
 
   handleSave(event) {
     event.preventDefault();
@@ -174,6 +186,7 @@ class ScoreCompiler extends Component {
             scores={this.state.scores}
             gameType={this.state.gameType}
             updateHits={this.updateHits}
+            handleClearPts={this.handleClearPts}
             handleSave={this.handleSave}
             handleDelete={this.handleDelete}
             assignPlayerOne={this.assignPlayerOne}
