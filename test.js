@@ -22,7 +22,6 @@
 //   return maxSequence;
 // }
 
-
 //10 is x
 //3*1 < 10 => 3
 //3*2 < 10 => 6
@@ -30,12 +29,7 @@
 //merge, then order, then return
 //divide, round down if remainder, subtract 1 if not
 
-
-
-
 //splice numbers off array, into new array currentCustomers; add to totalTime as necessary; must check if adding customer minutes + smallest previous is > longest customer; if it is, reset totalTime to = added customer + previous; repeating
-
-
 
 // function sumDigPow(a, b) {
 //
@@ -80,23 +74,22 @@
 // console.log('hi');
 // console.log(sumDigPow(50,150));
 
-
 // function incrementString (strng) {
-  // return incrementedString
+// return incrementedString
 
-  //parantheses include digits in array, no parantheses exclude them
-  // let array = strng.split(/(\d{1,})/g)
-  // let lastNumber = array[array.length-2]
-  // let length = lastNumber.length
-  // let plusOne = +lastNumber + 1
-  // plusOne = plusOne.toString()
-  //
-  // let numOfZeroes = length - plusOne.length
-  // for(let i=0;i<numOfZeroes;i++){
-  //   plusOne = '0' + plusOne
-  // }
+//parantheses include digits in array, no parantheses exclude them
+// let array = strng.split(/(\d{1,})/g)
+// let lastNumber = array[array.length-2]
+// let length = lastNumber.length
+// let plusOne = +lastNumber + 1
+// plusOne = plusOne.toString()
+//
+// let numOfZeroes = length - plusOne.length
+// for(let i=0;i<numOfZeroes;i++){
+//   plusOne = '0' + plusOne
+// }
 
-  //using lastNumber does not change array; equal but separate
+//using lastNumber does not change array; equal but separate
 //   array[array.length-2] = plusOne
 //   strng = array.join('')
 //
@@ -111,8 +104,6 @@
 //
 //       return s
 //     }
-
-
 
 // function solve(s){
 //     //
@@ -254,129 +245,128 @@
 //
 //   arrayCopy = insideArrayFw;
 
-function sum(num) {
-  console.log('test');
-  //when adding first 2 > than num
-  let collection = [];
-  let array = [];
-  let n = num;
-
-  let addNumbers = (array) => {
-    let number = array[0] + array[1];
-    // console.log(number);
-
-    return number;
-  };
-
-  array[0] = Array(num).fill(1);
-  // collection.push(array[i]);
-
-  for(let i=0; array[i].length>2; i++) {
-    let twoNumberArr = array[i].slice(-2);
-    let number = addNumbers(twoNumberArr);
-    let newArray = array[i].slice(0, -2);
-
-
-
-        newArray.push(number);
-        console.log('newArray is: ' + newArray);
-        // collection.push(newArray);
-    let combos = combination(newArray);
-        // collection.push(newArray);
-
-        collection = collection.concat(combos);
-        console.log('collecton is: ' + collection);
-        array.push(newArray);
-        console.log('array is: ' + array);
-    // console.log('array is: ' + newArray);
-    // console.log('array is: ' + array);
-
-    // array = combination(array);
-    }
+// function sum(num) {
+//   console.log('test');
+//   //when adding first 2 > than num
+//   let collection = [];
+//   let array = [];
+//   let n = num;
+//
+//   let addNumbers = (array) => {
+//     let number = array[0] + array[1];
+//     // console.log(number);
+//
+//     return number;
+//   };
+//
+//   array[0] = Array(num).fill(1);
+//   // collection.push(array[i]);
+//
+//   for(let i=0; array[i].length>2; i++) {
+//     let twoNumberArr = array[i].slice(-2);
+//     let number = addNumbers(twoNumberArr);
+//     let newArray = array[i].slice(0, -2);
 //
 //
 //
-function combination (array) {
-  let i = 0;
-  let y = -1;
-  let newNumber;
-  let newArray = [];
-  newArray.push(array);
-  // console.log('newArray is: ' + newArray);
-
-
-  while(newArray[i].length>2) {
-    console.log('newArray[i] is: ' + newArray);
-    // console.log('test');
-    // console.log(newArray[i]);
-    // console.log('y is: ' + y);
-    // console.log('i is: '+ i);
-    let frontArray = newArray[i].slice(0, y);
-    console.log('frontArray array is: ' + frontArray);
-    if(frontArray.length>=2) {
-      let backArray = newArray[i].slice(y);
-      console.log('backArray is: ' + backArray);
-      let numbers = frontArray.slice(-2);
-      newNumber = addNumbers(numbers);
-      frontArray.splice(-2, 2, newNumber);
-      console.log('now frontArray is: ' + frontArray);
-      console.log('now backArray is: ' + backArray);
-      let combinedArray = frontArray.concat(backArray);
-      console.log('combibnedArray is: ' + combinedArray);
-      newArray.push(combinedArray);
-      i++;
-      y += -1;
-      console.log('test: ' + newArray[i]);
-    // } else if(newArray[i].length>2){
-    //     combination(newArray[i]);
-  } else {
-    console.log('asdfasfdsfad');
-      k = 2;
-      let frontArray = newArray[i].slice(0, k);
-      let backArray = newArray[i].slice(k);
-      // console.log('backArray is: ' + backArray);
-      if(backArray.length>=1) {
-
-        // console.log('fjopripaewfqaf');
-        let numbers = frontArray.slice(-2);
-        newNumber = addNumbers(numbers);
-        frontArray.splice(-2, 2, newNumber);
-        let combinedArray = frontArray.concat(backArray);
-        newArray.push(combinedArray);
-        i++;
-        k++;
-      } else {
-        return newArray;
-      }
-  }
-
-  // if(
-  // newArray[newArray.length-1]<2){
-  //     combination(newArray);
-  //   }
-    //  else {
-    //   return newArray;
-    // }
-  }
-return newArray;
-//get down to 2 pairs of numbers, then send them through different arrangements function
-
-
-}
-
-// let newArray = array.slice(1, -1);
-// if(newArray[newArray.length-1]>2)
-// newArray = combination(newArray);
-// console.log(newArray);
-
-// array = array.concat(newArray);
-console.log(collection);
-return collection.length + 1;
-}
-
-
-console.dir(sum(10));
-
+//         newArray.push(number);
+//         console.log('newArray is: ' + newArray);
+//         // collection.push(newArray);
+//     let combos = combination(newArray);
+//         // collection.push(newArray);
+//
+//         collection = collection.concat(combos);
+//         console.log('collecton is: ' + collection);
+//         array.push(newArray);
+//         console.log('array is: ' + array);
+//     // console.log('array is: ' + newArray);
+//     // console.log('array is: ' + array);
+//
+//     // array = combination(array);
+//     }
+// //
+// //
+// //
+// function combination (array) {
+//   let i = 0;
+//   let y = -1;
+//   let newNumber;
+//   let newArray = [];
+//   newArray.push(array);
+//   // console.log('newArray is: ' + newArray);
+//
+//
+//   while(newArray[i].length>2) {
+//     console.log('newArray[i] is: ' + newArray);
+//     // console.log('test');
+//     // console.log(newArray[i]);
+//     // console.log('y is: ' + y);
+//     // console.log('i is: '+ i);
+//     let frontArray = newArray[i].slice(0, y);
+//     console.log('frontArray array is: ' + frontArray);
+//     if(frontArray.length>=2) {
+//       let backArray = newArray[i].slice(y);
+//       console.log('backArray is: ' + backArray);
+//       let numbers = frontArray.slice(-2);
+//       newNumber = addNumbers(numbers);
+//       frontArray.splice(-2, 2, newNumber);
+//       console.log('now frontArray is: ' + frontArray);
+//       console.log('now backArray is: ' + backArray);
+//       let combinedArray = frontArray.concat(backArray);
+//       console.log('combibnedArray is: ' + combinedArray);
+//       newArray.push(combinedArray);
+//       i++;
+//       y += -1;
+//       console.log('test: ' + newArray[i]);
+//     // } else if(newArray[i].length>2){
+//     //     combination(newArray[i]);
+//   } else {
+//     console.log('asdfasfdsfad');
+//       k = 2;
+//       let frontArray = newArray[i].slice(0, k);
+//       let backArray = newArray[i].slice(k);
+//       // console.log('backArray is: ' + backArray);
+//       if(backArray.length>=1) {
+//
+//         // console.log('fjopripaewfqaf');
+//         let numbers = frontArray.slice(-2);
+//         newNumber = addNumbers(numbers);
+//         frontArray.splice(-2, 2, newNumber);
+//         let combinedArray = frontArray.concat(backArray);
+//         newArray.push(combinedArray);
+//         i++;
+//         k++;
+//       } else {
+//         return newArray;
+//       }
+//   }
+//
+//   // if(
+//   // newArray[newArray.length-1]<2){
+//   //     combination(newArray);
+//   //   }
+//     //  else {
+//     //   return newArray;
+//     // }
+//   }
+// return newArray;
+// //get down to 2 pairs of numbers, then send them through different arrangements function
+//
+//
+// }
+//
+// // let newArray = array.slice(1, -1);
+// // if(newArray[newArray.length-1]>2)
+// // newArray = combination(newArray);
+// // console.log(newArray);
+//
+// // array = array.concat(newArray);
+// console.log(collection);
+// return collection.length + 1;
+// }
+//
+//
+// console.dir(sum(10));
 
 // const _items = Symbol('stackedItems');
 //
@@ -419,9 +409,6 @@ console.dir(sum(10));
 // let objectSymbols = Object.getOwnPropertySymbols(stack);
 // console.log(objectSymbols[0]);
 
-
-
-
 //find index of last 1
 
 //1 1 1 1 1 1 1
@@ -434,8 +421,6 @@ console.dir(sum(10));
 //1 1 1 2 2
 //1 1 2 3
 //1 2 4
-
-
 
 //1 2 2 2
 //2 2 3
@@ -472,7 +457,6 @@ console.dir(sum(10));
 //
 // let stack = new Stack();
 //
-
 
 // console.log(stack);
 // console.log(stack.stackedItems);
@@ -512,8 +496,7 @@ console.dir(sum(10));
 
 // console.log(stack.pop());
 
- // => 9
-
+// => 9
 
 // function sum(num) {
 //   let array = []
@@ -531,3 +514,64 @@ console.dir(sum(10));
 //   1 1 1 2
 //   1 1 3
 //   1 4
+// match = 3
+// / foo //.bar
+
+// if ($($0).attr('id') idFormat($0)
+// else if ($($0).attr('class') classFormat($0)
+// else if
+
+// function detectSelector(node) {
+//   let getTag = node =>
+//     $(node)
+//       .prop("tagName")
+//       .toLowerCase();
+//
+//   let idFormat = nodeId => {
+//     let format = str => {
+//       let match = str.search(regX);
+//       newNodeId = newNodeId + str.slice(0, match) + "//" + str[match];
+//       let back = str.slice(match + 1);
+//       console.log(back);
+//       return back;
+//     };
+//
+//     let regX = /[!"#$%&'()*+,.\/:;<=>?@[\]^`{|}~]/;
+//     let newNodeId = "";
+//     let string = nodeId;
+//     while (regX.test(string)) {
+//       string = format(string);
+//     }
+//     let tag = getTag(nodeId);
+//     newNodeId = newNodeId + string;
+//
+//     return tag + "#" + newNodeId;
+//   };
+//
+//   let classFormat = node => {
+//     let newNode = "";
+//     let className = "." + $(node).attr("class");
+//     let regX = /\s/;
+//     if (regX.test(className)) {
+//       className = className.replace(regX, ".");
+//       newNode = className;
+//     }
+//     let tag = getTag(node);
+//     newNode = tag + newNode;
+//     let parent = $(node)
+//       .parent()
+//       .prop("tagName")
+//       .toLowerCase();
+//     let n;
+//     if ($(tag).length > 1) {
+//       let array = $(tag);
+//       n = array.index(node);
+//     }
+//     return `${parent}:nth-type-of(${n}) ${newNode}`;
+//   };
+// }
+
+// let node = "in-column clearfix";
+// // "foo.bar";
+//
+// console.log(classFormat(node));
