@@ -1,9 +1,7 @@
 const path = require("path");
 
 var config = {
-  entry: {
-    path: "./react/src/main.js"
-  },
+  entry: "main.js",
   output: {
     path: path.resolve("app", "assets", "javascripts"),
     filename: "bundle.js",
