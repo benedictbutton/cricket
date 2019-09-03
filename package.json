@@ -10,7 +10,7 @@
   "scripts": {
     "heroku-postbuild": "npm run webpack --mode production",
     "start": "yarn run webpack --watch --mode development",
-    "test": "node_modules/.bin/karma start react/karma.conf.js",
+    "test": "node_modules/.bin/karma start ./react/karma.conf.js",
     "webpack": "webpack --config ./react/webpack.config.js"
   },
   "author": "Ivan Lasorsa",
@@ -40,6 +40,7 @@
     "jasmine-enzyme": "^1.0.0",
     "jquery": "^3.0.0",
     "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^8.0.0",
     "karma-coverage": "^0.5.5",
     "karma-jasmine": "^0.3.8",
     "karma-phantomjs-launcher": "^1.0.0",
@@ -53,6 +54,6 @@
     "redux-devtools": "^3.2.0",
     "sinon": "^4.1.2",
     "sinon-stub-promise": "^4.0.0",
-    "webpack-cli": "^3.3.4"
+    "webpack-cli": "^3.3.5"
   }
 }
