@@ -2,7 +2,7 @@ const path = require("path");
 
 var config = {
   entry: {
-    path: "./src/main.js"
+    path: "./react/src/main.js"
   },
   output: {
     path: path.resolve("app", "assets", "javascripts"),
