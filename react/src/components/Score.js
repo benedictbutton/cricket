@@ -7,14 +7,15 @@ class Score extends Component {
   }
 
   render() {
+    const { log, record, points, handleClearPts, handleChange } = this.props;
     return (
       <div className="containment">
         <div className="row align-center">
-          {this.props.record > 6 && this.props.points && (
+          {record > 6 && points && (
             <div className="medium-2 columns align-self-middle text-center">
               <button
                 onClick={() => {
-                  this.props.handleClearPts(this.props);
+                  handleClearPts(this.props);
                 }}
               >
                 <DeleteIcon />
@@ -25,17 +26,17 @@ class Score extends Component {
             <h1
               className="hits"
               onClick={() => {
-                this.props.handleChange(this.props);
+                handleChange(this.props);
               }}
             >
               {this.props.log}
             </h1>
           </div>
-          {this.props.record <= 6 && this.props.points && (
+          {record <= 6 && points && (
             <div className="medium-2 columns align-self-middle text-center">
               <button
                 onClick={() => {
-                  this.props.handleClearPts(this.props);
+                  handleClearPts(this.props);
                 }}
               >
                 <DeleteIcon />
