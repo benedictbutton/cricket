@@ -28,7 +28,7 @@ $ rake db:migrate
 $ rails s
 
 ```
-then in a separate terminal session:
+& in a separate terminal session:
 ```
 $ yarn install
 $ yarn start
