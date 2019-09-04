@@ -1,18 +1,19 @@
 # README
 
+## Summary
 A scoring app for the dart game Cricket that allows players to record their play. The app includes the options to set up match play with teams or to play with points. In the spirit of competitiveness, players can track matches across time, who played whom, and when necessary, save unfinished matches to resume at a later date.
 
-##Back End
-• Ruby 2.3.4
+### Back End
+Ruby 2.4.4
 • Rails 5.1
 
-Front End =>
-• React 16
+### Front End
+React 16
 • React Router 4.3.1
 • Webpack 4.17.1
 
-Testing =>
-• Rspec
+### Testing
+Rspec
 • Enzyme
 • Karma
 • Jasmine
