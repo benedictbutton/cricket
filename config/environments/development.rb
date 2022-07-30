@@ -55,4 +55,6 @@ Rails.application.configure do
   # ENV["CDN_ADDRESS"]
 
   # config.assets.prefixgit  = "/dev-assets"
+
+  OmniAuth.config.allowed_request_methods = [:get]
 end

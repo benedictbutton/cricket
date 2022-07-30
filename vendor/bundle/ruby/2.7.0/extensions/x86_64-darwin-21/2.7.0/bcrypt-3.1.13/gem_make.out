@@ -1,0 +1,19 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.13/ext/mri
+/usr/local/opt/ruby@2.7/bin/ruby -I /usr/local/Cellar/ruby@2.7/2.7.6/lib/ruby/2.7.0 -r ./siteconf20220725-24445-1arlzhh.rb extconf.rb
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.13/ext/mri
+make DESTDIR\= clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.13/ext/mri
+make DESTDIR\=
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+clang  -D__SKIP_GNU  -I/usr/local/opt/libyaml/include -I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.13/ext/mri
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20220725-24445-19pdg63
