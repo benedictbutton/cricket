@@ -1685,7 +1685,7 @@ $(document).ready(function() {
       // Force favicon reload - otherwise the location change containing anchor would drop the favicon...
       // Works only on firefox, but still... - Anyone know a better solution to force favicon on local file?
       $('link[rel="shortcut icon"]').remove();
-      $('head').append('<link rel="shortcut icon" type="image/png" href="'+ favicon_path +'" />');
+      $('head').append('<link rel="shortcut icon" type="image/ico" href="'+ favicon_path +'" />');
     };
     return false;
   });

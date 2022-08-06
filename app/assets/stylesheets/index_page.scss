@@ -41,6 +41,9 @@ Header
   color: red;
   margin-bottom: 3rem;
   padding-bottom: 0;
+  &:hover {
+    color: green;
+  }
 }
 
 a:hover {
