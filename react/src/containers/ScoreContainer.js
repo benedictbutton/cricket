@@ -158,8 +158,7 @@ class ScoreContainer extends Component {
     });
 
     return (
-      <div>
-        <div className="containment">
+        <div className="containment" style={{padding: '3rem'}}>
           <div className="row align-center">
             <div className="medium-4 columns">
               <PlayerName player={playerOne} />
@@ -202,7 +201,6 @@ class ScoreContainer extends Component {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }

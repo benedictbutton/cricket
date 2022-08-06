@@ -1,25 +1,10 @@
 source 'https://rubygems.org'
-ruby "2.7.6"
+ruby "2.6.5"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
-gem 'carrierwave'
-gem 'devise', '>= 4.6.0'
-gem 'fog'
-gem 'fog-aws'
-gem 'foundation-rails', '6.3.0.0'
-gem 'httparty'
-gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails'
-gem 'mini_magick'
-gem 'omniauth-google-oauth2'
-gem 'puma', '~> 3.7'
-gem 'rails', '~> 5.1.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
 
 group :test do
   gem 'coveralls', require: false
@@ -44,6 +29,21 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'carrierwave'
+gem 'devise', '>= 4.6.0'
+gem 'fog'
+gem 'fog-aws'
+gem 'foundation-rails', '6.3.0.0'
+gem 'httparty'
+gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'mini_magick'
+gem 'omniauth-google-oauth2'
+gem 'puma', '~> 3.7'
+gem 'rails', '~> 5.1.0'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
