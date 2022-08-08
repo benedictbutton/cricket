@@ -18,7 +18,7 @@ module Faker
 
     class << self
       # rubocop:disable Metrics/ParameterLists
-
+      #
       ##
       # Generate a mock Omniauth response from Google.
       #
