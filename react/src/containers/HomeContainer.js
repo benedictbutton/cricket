@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -7,7 +6,6 @@ class HomeContainer extends Component {
   }
 
   render() {
-    if(window.location.href.includes('cloudfront')) return <Redirect to='http://crickety.herokuapp.com'/>;
     return <div id="app" />;
   }
 }
