@@ -1,0 +1,13 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+/Users/benedict.daly/.rbenv/versions/2.6.5/bin/ruby -I /Users/benedict.daly/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20230422-91631-acq021.rb extconf.rb
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/2.6.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" install
