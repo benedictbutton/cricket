@@ -98,4 +98,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   OmniAuth.config.allowed_request_methods = [:get]
+
+  # force HTTPS on production
+  config.force_ssl = true
 end
