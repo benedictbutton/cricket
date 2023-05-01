@@ -446,6 +446,7 @@ GEM
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    psych (3.3.4)
     public_suffix (5.0.1)
     puma (3.12.6)
     racc (1.6.2)
@@ -629,6 +630,7 @@ DEPENDENCIES
   ovirt-engine-sdk (~> 4.2, >= 4.2.4)
   pg (~> 1.2.3)
   pry-rails
+  psych (< 4)
   puma (~> 3.7)
   rails (~> 6.0.2)
   rspec-rails (~> 3.5)
