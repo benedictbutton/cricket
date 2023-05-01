@@ -1,0 +1,13 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+/Users/benedict.daly/.rbenv/versions/3.1.4/bin/ruby -I /Users/benedict.daly/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-zmrx30 sitelibdir\=./.gem.20230501-6104-zmrx30 clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-zmrx30 sitelibdir\=./.gem.20230501-6104-zmrx30
+make: Nothing to be done for `all'.
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-zmrx30 sitelibdir\=./.gem.20230501-6104-zmrx30 install

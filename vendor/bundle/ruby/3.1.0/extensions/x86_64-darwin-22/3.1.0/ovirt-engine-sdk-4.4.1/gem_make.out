@@ -1,0 +1,146 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+/Users/benedict.daly/.rbenv/versions/3.1.4/bin/ruby -I /Users/benedict.daly/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+checking for xml2-config... yes
+checking for curl-config... yes
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-fssvqe sitelibdir\=./.gem.20230501-6104-fssvqe clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-fssvqe sitelibdir\=./.gem.20230501-6104-fssvqe
+compiling ov_error.c
+compiling ov_http_client.c
+ov_http_client.c:216:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_http_client.c:272:39: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    count = INT2NUM(context_ptr->size * context_ptr->nmemb);
+            ~~~~~~~ ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+ov_http_client.c:392:33: warning: comparison of integers of different signs: 'long' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        while (pointer - buffer < length && isspace(*pointer)) {
+               ~~~~~~~~~~~~~~~~ ^ ~~~~~~
+ov_http_client.c:651:18: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    ptr->limit = connections;
+               ~ ^~~~~~~~~~~
+ov_http_client.c:845:71: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    context_ptr->code = curl_multi_wait(context_ptr->handle, NULL, 0, timeout, NULL);
+                        ~~~~~~~~~~~~~~~                               ^~~~~~~
+ov_http_client.c:1001:47: warning: incompatible function pointer types passing 'int (VALUE, VALUE, struct curl_slist **)' (aka 'int (unsigned long, unsigned long, struct curl_slist **)') to parameter of type 'int (*)(VALUE, VALUE, VALUE)' (aka 'int (*)(unsigned long, unsigned long, unsigned long)') [-Wincompatible-function-pointer-types]
+        rb_hash_foreach(request_ptr->headers, ov_http_client_add_header, (VALUE) headers);
+                                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/intern/hash.h:83:40: note: passing argument to parameter 'func' here
+void rb_hash_foreach(VALUE hash, int (*func)(VALUE key, VALUE val, VALUE arg), VALUE arg);
+                                       ^
+ov_http_client.c:1092:34: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+    if (RHASH_SIZE(ptr->pending) < ptr->limit) {
+        ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+ov_http_client.c:1118:71: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+        while (RARRAY_LEN(ptr->queue) > 0 && RHASH_SIZE(ptr->pending) < ptr->limit) {
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+8 warnings generated.
+compiling ov_http_request.c
+ov_http_request.c:75:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_http_request.c:347:77: warning: 'rb_cData' is deprecated: by: rb_cObject.  Will be removed in 3.1. [-Wdeprecated-declarations]
+    ov_http_request_class = rb_define_class_under(ov_module, "HttpRequest", rb_cData);
+                                                                            ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:394:18: note: expanded from macro 'rb_cData'
+#define rb_cData rb_cData()
+                 ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:372:1: note: 'rb_cData' has been explicitly marked deprecated here
+RBIMPL_ATTR_DEPRECATED(("by: rb_cObject.  Will be removed in 3.1."))
+^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+# define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+                                                    ^
+2 warnings generated.
+compiling ov_http_response.c
+ov_http_response.c:54:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_http_response.c:187:79: warning: 'rb_cData' is deprecated: by: rb_cObject.  Will be removed in 3.1. [-Wdeprecated-declarations]
+    ov_http_response_class = rb_define_class_under(ov_module, "HttpResponse", rb_cData);
+                                                                              ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:394:18: note: expanded from macro 'rb_cData'
+#define rb_cData rb_cData()
+                 ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:372:1: note: 'rb_cData' has been explicitly marked deprecated here
+RBIMPL_ATTR_DEPRECATED(("by: rb_cObject.  Will be removed in 3.1."))
+^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+# define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+                                                    ^
+2 warnings generated.
+compiling ov_http_transfer.c
+ov_http_transfer.c:51:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_http_transfer.c:83:79: warning: 'rb_cData' is deprecated: by: rb_cObject.  Will be removed in 3.1. [-Wdeprecated-declarations]
+    ov_http_transfer_class = rb_define_class_under(ov_module, "HttpTransfer", rb_cData);
+                                                                              ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:394:18: note: expanded from macro 'rb_cData'
+#define rb_cData rb_cData()
+                 ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:372:1: note: 'rb_cData' has been explicitly marked deprecated here
+RBIMPL_ATTR_DEPRECATED(("by: rb_cObject.  Will be removed in 3.1."))
+^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+# define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+                                                    ^
+2 warnings generated.
+compiling ov_module.c
+compiling ov_string.c
+compiling ov_xml_reader.c
+ov_xml_reader.c:75:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_xml_reader.c:109:14: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    length = RSTRING_LEN(data);
+           ~ ^~~~~~~~~~~~~~~~~
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rstring.h:52:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+ov_xml_reader.c:433:73: warning: 'rb_cData' is deprecated: by: rb_cObject.  Will be removed in 3.1. [-Wdeprecated-declarations]
+    ov_xml_reader_class = rb_define_class_under(ov_module, "XmlReader", rb_cData);
+                                                                        ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:394:18: note: expanded from macro 'rb_cData'
+#define rb_cData rb_cData()
+                 ^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/core/rdata.h:372:1: note: 'rb_cData' has been explicitly marked deprecated here
+RBIMPL_ATTR_DEPRECATED(("by: rb_cObject.  Will be removed in 3.1."))
+^
+/Users/benedict.daly/.rbenv/versions/3.1.4/include/ruby-3.1.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+# define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+                                                    ^
+3 warnings generated.
+compiling ov_xml_writer.c
+ov_xml_writer.c:69:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+1 warning generated.
+compiling ovirtsdk4c.c
+linking shared-object ovirtsdk4c.bundle
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-fssvqe sitelibdir\=./.gem.20230501-6104-fssvqe install
+/usr/bin/install -c -m 0755 ovirtsdk4c.bundle ./.gem.20230501-6104-fssvqe

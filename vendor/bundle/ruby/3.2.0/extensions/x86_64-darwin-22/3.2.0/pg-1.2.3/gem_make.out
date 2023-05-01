@@ -1,0 +1,44 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/pg-1.2.3/ext
+/Users/benedict.daly/.rbenv/versions/3.2.2/bin/ruby extconf.rb --with-cflags\=-Wno-error\=implicit-function-declaration
+checking for pg_config... yes
+Using config values from /usr/local/bin/pg_config
+checking for libpq-fe.h... yes
+checking for libpq/libpq-fs.h... yes
+checking for pg_config_manual.h... yes
+checking for PQconnectdb() in -lpq... yes
+checking for PQsetSingleRowMode()... yes
+checking for PQconninfo()... yes
+checking for PQsslAttribute()... yes
+checking for PQresultVerboseErrorMessage()... yes
+checking for PQencryptPasswordConn()... yes
+checking for PQresultMemorySize()... yes
+checking for timegm()... yes
+checking for rb_gc_adjust_memory_usage()... yes
+checking for unistd.h... yes
+checking for inttypes.h... yes
+checking for C99 variable length arrays... yes
+creating extconf.h
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/pg-1.2.3/ext
+make DESTDIR\= sitearchdir\=./.gem.20230501-46050-483zh7 sitelibdir\=./.gem.20230501-46050-483zh7 clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/pg-1.2.3/ext
+make DESTDIR\= sitearchdir\=./.gem.20230501-46050-483zh7 sitelibdir\=./.gem.20230501-46050-483zh7
+compiling gvl_wrappers.c
+compiling pg.c
+compiling pg_binary_decoder.c
+compiling pg_binary_encoder.c
+compiling pg_coder.c
+compiling pg_connection.c
+compiling pg_copy_coder.c
+compiling pg_errors.c
+compiling pg_record_coder.c
+compiling pg_result.c
+pg_result.c:1590:58: error: use of undeclared identifier 'rb_cData'
+        rb_cPGresult = rb_define_class_under( rb_mPG, "Result", rb_cData );
+                                                                ^
+1 error generated.
+make: *** [pg_result.o] Error 1
+
+make failed, exit code 2

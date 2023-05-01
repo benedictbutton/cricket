@@ -1,0 +1,16 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/Users/benedict.daly/.rbenv/versions/3.1.4/bin/ruby -I /Users/benedict.daly/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-yb8rlo sitelibdir\=./.gem.20230501-6104-yb8rlo clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-yb8rlo sitelibdir\=./.gem.20230501-6104-yb8rlo
+compiling unf.cc
+linking shared-object unf_ext.bundle
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230501-6104-yb8rlo sitelibdir\=./.gem.20230501-6104-yb8rlo install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20230501-6104-yb8rlo

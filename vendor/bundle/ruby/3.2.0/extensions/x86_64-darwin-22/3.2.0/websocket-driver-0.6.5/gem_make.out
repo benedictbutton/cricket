@@ -1,0 +1,18 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+/Users/benedict.daly/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230501-39977-64oxix sitelibdir\=./.gem.20230501-39977-64oxix clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230501-39977-64oxix sitelibdir\=./.gem.20230501-39977-64oxix
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230501-39977-64oxix sitelibdir\=./.gem.20230501-39977-64oxix install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20230501-39977-64oxix
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230501-39977-64oxix sitelibdir\=./.gem.20230501-39977-64oxix clean

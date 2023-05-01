@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.6.5"
+ruby "3.1.4"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -32,6 +32,7 @@ end
 
 gem 'carrierwave'
 gem 'devise', '>= 4.6.0'
+gem 'ovirt-engine-sdk', '~> 4.2', '>= 4.2.4'
 gem 'fog'
 gem 'fog-aws'
 gem 'foundation-rails', '6.3.0.0'

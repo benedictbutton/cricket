@@ -1,0 +1,58 @@
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+/Users/benedict.daly/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+checking for xml2-config... yes
+checking for curl-config... yes
+creating Makefile
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230501-46050-drsp1p sitelibdir\=./.gem.20230501-46050-drsp1p clean
+
+current directory: /Users/benedict.daly/Apps/cricket/vendor/bundle/ruby/3.2.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230501-46050-drsp1p sitelibdir\=./.gem.20230501-46050-drsp1p
+compiling ov_error.c
+compiling ov_http_client.c
+ov_http_client.c:216:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_http_client.c:272:39: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+    count = INT2NUM(context_ptr->size * context_ptr->nmemb);
+            ~~~~~~~ ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+ov_http_client.c:392:33: warning: comparison of integers of different signs: 'long' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        while (pointer - buffer < length && isspace(*pointer)) {
+               ~~~~~~~~~~~~~~~~ ^ ~~~~~~
+ov_http_client.c:651:18: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    ptr->limit = connections;
+               ~ ^~~~~~~~~~~
+ov_http_client.c:845:71: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    context_ptr->code = curl_multi_wait(context_ptr->handle, NULL, 0, timeout, NULL);
+                        ~~~~~~~~~~~~~~~                               ^~~~~~~
+ov_http_client.c:1001:47: warning: incompatible function pointer types passing 'int (VALUE, VALUE, struct curl_slist **)' (aka 'int (unsigned long, unsigned long, struct curl_slist **)') to parameter of type 'int (*)(VALUE, VALUE, VALUE)' (aka 'int (*)(unsigned long, unsigned long, unsigned long)') [-Wincompatible-function-pointer-types]
+        rb_hash_foreach(request_ptr->headers, ov_http_client_add_header, (VALUE) headers);
+                                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/benedict.daly/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/internal/intern/hash.h:83:40: note: passing argument to parameter 'func' here
+void rb_hash_foreach(VALUE hash, int (*func)(VALUE key, VALUE val, VALUE arg), VALUE arg);
+                                       ^
+ov_http_client.c:1092:34: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+    if (RHASH_SIZE(ptr->pending) < ptr->limit) {
+        ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+ov_http_client.c:1118:71: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+        while (RARRAY_LEN(ptr->queue) > 0 && RHASH_SIZE(ptr->pending) < ptr->limit) {
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+8 warnings generated.
+compiling ov_http_request.c
+ov_http_request.c:75:29: warning: excess elements in array initializer [-Wexcess-initializers]
+        .reserved = { NULL, NULL }
+                            ^~~~
+/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+ov_http_request.c:347:77: error: use of undeclared identifier 'rb_cData'
+    ov_http_request_class = rb_define_class_under(ov_module, "HttpRequest", rb_cData);
+                                                                            ^
+1 warning and 1 error generated.
+make: *** [ov_http_request.o] Error 1
+
+make failed, exit code 2
